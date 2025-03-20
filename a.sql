@@ -1,0 +1,1 @@
+ALTER TABLE kategorija AUTO_INCREMENT = 10;

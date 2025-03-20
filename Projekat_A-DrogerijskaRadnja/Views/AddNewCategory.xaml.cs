@@ -1,0 +1,77 @@
+﻿using Projekat_A_DrogerijskaRadnja.Model;
+using Projekat_A_DrogerijskaRadnja.Services;
+using System.Collections.Generic;
+using System.Windows;
+
+namespace Projekat_A_DrogerijskaRadnja.Views
+{
+    public partial class AddNewCategory : Window
+    {
+        public List<Department> departments = new List<Department>();
+        public DepartmentService departmentService = new DepartmentService();
+        private CategoryService categoryService;
+        public string CategoryName => txtName.Text;
+        public string Description => txtDescription.Text;
+        public Department SelectedDepartment => cmbDepartments.SelectedItem as Department;
+        public AddNewCategory()
+        {
+            InitializeComponent();
+            categoryService = new CategoryService();
+            LoadDepartments();
+        }
+        private void LoadDepartments()
+        {
+            departments = departmentService.getDepartments();
+            cmbDepartments.ItemsSource = departments;
+            cmbDepartments.DisplayMemberPath = "Name";
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (ValidateInput())
+            {
+                var selectedDepartment = cmbDepartments.SelectedItem as Department;
+                int departmentId = selectedDepartment.Id_Department;
+
+                var newCategory = new Category
+                {
+                    Name = txtName.Text,
+                    Description = txtDescription.Text,
+                    DepartmentId = departmentId
+                };
+
+                categoryService.AddCategory(newCategory);
+                Close();
+            }
+
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
+
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Name of catgory is neccesary. Fill in and try again.");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtDescription.Text))
+            {
+                MessageBox.Show("Description of catgory is neccesary. Fill in and try again.");
+                return false;
+            }
+            if (string.IsNullOrEmpty(cmbDepartments.Text))
+            {
+                MessageBox.Show("Choose catgory department and try again.");
+                return false;
+            }
+
+            return true;
+        }
+
+    }
+}
