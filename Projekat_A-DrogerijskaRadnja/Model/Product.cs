@@ -1,19 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projekat_A_DrogerijskaRadnja.Model
 {
-    class Product
+   public class Product
     {
-        private int IdProizvoda;
-        private String Naziv;
-        private String Opis;
-        private int KoličinaNaStanju;
-        private String Sastav;
-        private int IdKategorija;
-        private String BREND_Naziv;
+        public int ProductId { get; set; }
+        public String Name { get; set; }
+        public String Description { get; set; }
+        public int QuantityAvailable { get; set; }
+        public String Integrities { get; set; }
+        public int CategoryId { get; set; }
+        public String Brand { get; set; }
+
+        public Product() { }
+
+        public Product(int productId, string name, string description, int quantityAvailable, string integrities, int categoryId, string brand)
+        {
+            ProductId = productId;
+            Name = name;
+            Description = description;
+            QuantityAvailable = quantityAvailable;
+            Integrities = integrities;
+            CategoryId = categoryId;
+            Brand = brand;
+        }
+
+        public Product(int productId, string name, string description, int quantityAvailable, string integrities, string brand)
+        {
+            ProductId = productId;
+            Name = name;
+            Description = description;
+            QuantityAvailable = quantityAvailable;
+            Integrities = integrities;
+            Brand = brand;
+        }
+
     }
 }

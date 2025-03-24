@@ -35,13 +35,13 @@
                            HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
                 <TextBox x:Name="usernameTxt" Height="35" Width="300" Margin="0,10,0,0"
-                         Tag="Korisničko ime" Text="Username"
+                         Tag="Username" Text="Username"
                          Foreground="Gray" GotFocus="RemovePlaceholder" LostFocus="SetPlaceholder"
                          FontSize="19"/>
 
            
                 <PasswordBox x:Name="passwordTxt" Height="35" Width="300" Margin="0,10,0,0"
-                             Tag="Lozinka" Password="Lozinka"
+                             Tag="Password" Password="Password" 
                              Foreground="Gray" GotFocus="RemovePasswordPlaceholder" LostFocus="SetPasswordPlaceholder"
                              FontSize="19"/>
 

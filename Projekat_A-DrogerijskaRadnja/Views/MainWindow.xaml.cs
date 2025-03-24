@@ -26,7 +26,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 textBox.Foreground = Brushes.Black;
             }
         }
-
         private void SetPlaceholder(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -36,8 +35,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 textBox.Foreground = Brushes.Gray;
             }
         }
-
-
         private void RemovePasswordPlaceholder(object sender, RoutedEventArgs e)
         {
             PasswordBox passwordBox = sender as PasswordBox;
@@ -47,7 +44,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 passwordBox.Foreground = Brushes.Black;
             }
         }
-
         private void SetPasswordPlaceholder(object sender, RoutedEventArgs e)
         {
             PasswordBox passwordBox = sender as PasswordBox;
@@ -63,9 +59,9 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             username = usernameTxt.Text;
             password = passwordTxt.Password;
             var accounts = accountService.getAccounts();
-            var postojiNalog = accounts.Any(n => n.KorisnickoIme == username && n.Lozinka == password);
+            var accountExists = accounts.Any(n => n.KorisnickoIme == username && n.Lozinka == password);
 
-            if (postojiNalog)
+            if (accountExists)
             {
                 MessageBox.Show("Sucessful!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
                 if (username == "tijana.lazendic") {

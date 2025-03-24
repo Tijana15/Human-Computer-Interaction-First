@@ -30,7 +30,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void OnSellingItemsClick(object sender, RoutedEventArgs e)
         {
-            
+            contentArea.Content=new SellingItemsView();
             if (activeButton != null)
             {
                 activeButton.Background = Brushes.Transparent;
