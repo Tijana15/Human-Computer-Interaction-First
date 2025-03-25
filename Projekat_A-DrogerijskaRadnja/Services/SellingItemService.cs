@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Projekat_A_DrogerijskaRadnja.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using sellingItem = Projekat_A_DrogerijskaRadnja.Model.SellingItem;
@@ -14,6 +15,49 @@ namespace Projekat_A_DrogerijskaRadnja.Services
         {
             connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
         }
+
+        public SellingItemDetails GetSellingItemDetails(int productId)
+        {
+            var query = @"
+            SELECT 
+                sa.CijenaNabavna,
+                n.DatumNabavke,
+                d.Naziv AS DobavljacNaziv
+            FROM 
+                prodajni_artikl pa
+            JOIN 
+                stavka_nabavke sa ON pa.STAVKA_NABAVKE_NABAVLJANJE_IdNabavke = sa.NABAVLJANJE_IdNabavke
+            JOIN 
+                nabavljanje n ON sa.NABAVLJANJE_IdNabavke = n.IdNabavke
+            JOIN 
+                dobavljač d ON n.DOBAVLJAČ_IdDobavljač = d.IdDobavljač
+            WHERE 
+                pa.PROIZVOD_IdProizvod = @productId";
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@productId", productId);
+
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new SellingItemDetails
+                        {
+                            NabavnaCijena = reader.GetDecimal("CijenaNabavna"),
+                            DatumNabavke = reader.GetDateTime("DatumNabavke"),
+                            DobavljacNaziv = reader.GetString("DobavljacNaziv")
+                        };
+                    }
+                }
+            }
+
+            return null;
+        }
+    
+
 
         public List<SellingItem> GetAllSellingItems()
         {
@@ -75,6 +119,7 @@ namespace Projekat_A_DrogerijskaRadnja.Services
                 command.ExecuteNonQuery();
             }
         }
+
         public void AddSellingItem(SellingItem sellingItem)
         {
             using var connection = new MySqlConnection(connectionString);

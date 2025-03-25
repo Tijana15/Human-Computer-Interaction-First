@@ -20,7 +20,10 @@
         <!-- Product -->
         <TextBlock Grid.Row="0" Text="Product:" Margin="0 0 0 5"/>
         <ComboBox x:Name="cmbProducts" Grid.Row="1" Margin="0 0 0 10"
-                  VerticalAlignment="Top" Height="30"/>
+                  VerticalAlignment="Top" Height="30" 
+                  DisplayMemberPath="Name" 
+                  SelectedValuePath="ProductId"
+                  SelectionChanged="cmbProducts_SelectionChanged" />
 
         <!-- Purchase -->
         <TextBlock Grid.Row="2" Text="Purchase:" Margin="0 0 0 5"/>

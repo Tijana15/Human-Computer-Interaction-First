@@ -44,7 +44,9 @@
                                     <TextBlock Text="Price: " FontWeight="Bold" FontSize="14"/>
                                     <TextBlock Text="{Binding Price, StringFormat='${0:0.00}'}"
                                            FontSize="14" Foreground="DarkGreen"/>
+                                
                                 </StackPanel>
+                            
                         </Grid>
                     </Border>
                 </DataTemplate>

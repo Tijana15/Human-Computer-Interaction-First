@@ -8,14 +8,10 @@ namespace Projekat_A_DrogerijskaRadnja.Views
    public partial class AddNewSellingItem : Window
     {
         private List<Product> products = new List<Product>();
-        //private List<Purchase> purchases = new List<Purchase>();
-
-       // public ProductService productService = new ProductService();
-        //public PurchaseService purchaseService = new PurchaseService();
+        public ProductService ProductService = new ProductService();
         private SellingItemService sellingItemService;
 
         private Product SelectedProduct => cmbProducts.SelectedItem as Product;
-        //private Purchase SelectedPurchase => cmbPurchases.SelectedItem as Purchase;
         public double Price => double.TryParse(txtPrice.Text, out double price) ? price : 0;
 
         public AddNewSellingItem()
@@ -23,22 +19,18 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             InitializeComponent();
             sellingItemService = new SellingItemService();
             LoadProducts();
-            LoadPurchases();
+            
         }
+
 
         private void LoadProducts()
         {
-            //products = productService.GetProducts();
+            products = ProductService.GetAllProducts();
             cmbProducts.ItemsSource = products;
             cmbProducts.DisplayMemberPath = "Name";
         }
 
-        private void LoadPurchases()
-        {
-            //purchases = purchaseService.GetPurchases();
-            //cmbPurchases.ItemsSource = purchases;
-            cmbPurchases.DisplayMemberPath = "Id";
-        }
+        
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
@@ -88,14 +80,15 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             return true;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void cmbProducts_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            var selectedProduct = (Product)cmbProducts.SelectedItem;
 
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
+            if (selectedProduct != null)
+            {
+                int selectedProductId = selectedProduct.ProductId;
+                MessageBox.Show($"Selected Product ID: {selectedProductId}");
+            }
         }
     }
 }
