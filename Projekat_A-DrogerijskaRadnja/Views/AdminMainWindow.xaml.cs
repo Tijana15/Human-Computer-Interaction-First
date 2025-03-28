@@ -1,4 +1,7 @@
 ﻿using System.Windows;
+using System.Windows.Media;
+using System.Windows.Controls;
+
 
 namespace Projekat_A_DrogerijskaRadnja.Views
 {
@@ -7,18 +10,27 @@ namespace Projekat_A_DrogerijskaRadnja.Views
     /// </summary>
     public partial class AdminMainWindow : Window
     {
+        private Button activeButton = null;
         public AdminMainWindow()
         {
             InitializeComponent();
         }
         private void OnEmployeesClick(object sender, RoutedEventArgs e)
         {
-            contentText.Text = "Employees Section";
+            contentArea.Content = new EmployeesView();
+            if (activeButton != null)
+            {
+                activeButton.Background = Brushes.Transparent;
+            }
+
+            activeButton = sender as Button;
+            //activeButton.Background = new SolidColorBrush();
+
         }
 
         private void OnSettingsClick(object sender, RoutedEventArgs e)
         {
-            contentText.Text = "Settings Section";
+            contentArea.Content = "Settings Section";
         }
 
         private void OnLogoutClick(object sender, RoutedEventArgs e)

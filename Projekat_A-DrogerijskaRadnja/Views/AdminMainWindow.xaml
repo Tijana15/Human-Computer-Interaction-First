@@ -30,9 +30,7 @@
 
         <!-- Glavni sadržaj (desna strana) -->
         <Grid Grid.Column="1" Background="LightGray">
-            <TextBlock x:Name="contentText" Text="Welcome, Administrator!"
-                    FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+            <ContentControl x:Name="contentArea" Grid.Column="1" Background="LightGray"/>
         </Grid>
 
     </Grid>

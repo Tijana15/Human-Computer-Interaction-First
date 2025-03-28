@@ -53,6 +53,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void OnBillsClick(object sender, RoutedEventArgs e)
         {
+            contentArea.Content = new BillsOverview();
             if (activeButton != null)
             {
                 activeButton.Background = Brushes.Transparent;

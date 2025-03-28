@@ -8,13 +8,13 @@
         </Grid.RowDefinitions>
 
         <!-- Search and add button -->
-            <StackPanel Orientation="Horizontal" Margin="10">
-            <TextBox x:Name="searchBox" Width="210" Height="25" VerticalContentAlignment="Center" 
-             Text="Search a category..." Foreground="Gray"  
-             GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="14"/>
-            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="70"></Button>
-                <Button Content="Add" Click="OnAddCategoryClick" Margin="5,0,0,0" Width="70"/>
-            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="70"></Button>
+            <StackPanel Orientation="Horizontal" Margin="10" Height="30">
+            <TextBox x:Name="searchBox" Width="220" VerticalContentAlignment="Center" 
+             Text="Search a category..." Foreground="DarkSlateGray" Background="White"  
+             GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="15"/>
+            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="80" Foreground="DarkSlateGray" FontWeight="DemiBold" Background="White"  FontSize="15"></Button>
+            <Button Content="Add" Click="OnAddCategoryClick" Margin="5,0,0,0" Width="80" Foreground="DarkSlateGray" FontWeight="DemiBold" Background="White"  FontSize="15"/>
+            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="80" Foreground="DarkSlateGray" FontWeight="DemiBold" Background="White"  FontSize="15"></Button>
             </StackPanel>
 
         

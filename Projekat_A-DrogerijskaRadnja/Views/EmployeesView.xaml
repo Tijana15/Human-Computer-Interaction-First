@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Projekat_A_DrogerijskaRadnja.Views.EmployeesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Search and add button -->
+        <StackPanel Orientation="Horizontal" Margin="10" Height="30">
+            <TextBox x:Name="searchBox" Width="220" VerticalContentAlignment="Center" 
+                     Text="Search an employee..." Foreground="HotPink" Background="White"  
+                     GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="15"/>
+            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="80" 
+                    Foreground="HotPink" FontWeight="DemiBold" Background="White" FontSize="15"/>
+            <Button Content="Add" Click="OnAddEmployeeClick" Margin="5,0,0,0" Width="80" 
+                    Foreground="HotPink" FontWeight="DemiBold" Background="White" FontSize="15"/>
+            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="80" 
+                    Foreground="HotPink" FontWeight="DemiBold" Background="White" FontSize="15"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="employeesPanel" MouseDoubleClick="OnEmployeeDoubleClick"
+           Margin="10" HorizontalAlignment="Stretch">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Margin="10" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="DeepPink" BorderThickness="2" CornerRadius="15" 
+                                Background="White" Padding="10" Margin="10" Width="220" Height="280">
+                            <StackPanel HorizontalAlignment="Center">
+
+                                <!-- Ikonica korisnika -->
+                                <Ellipse Width="80" Height="80" Stroke="DeepPink" StrokeThickness="2"
+                                         HorizontalAlignment="Center" Margin="0,0,0,10">
+                                    <Ellipse.Fill>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <TextBlock Text="👤" FontSize="40" HorizontalAlignment="Center"/>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+
+                                <!-- Podaci o zaposlenom -->
+                                <TextBlock FontWeight="Bold" FontSize="16" Foreground="HotPink" TextAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1}">
+                                            <Binding Path="Name"/>
+                                            <Binding Path="LastName"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock Text="{Binding Salary, StringFormat='💰 Salary {0}$'}"
+                                           FontSize="14" Foreground="Black" TextAlignment="Center"  Margin="0,5,0,5"/>
+                                <TextBlock Text="{Binding HireDate, StringFormat='📅 Date of hiring {0:dd.MM.yyyy}'}"  Margin="0,5,0,5"
+                                           FontSize="14" Foreground="Gray" TextAlignment="Center"/>
+                                <TextBlock Text="{Binding Shift, StringFormat='⏰ {0}'}"  Margin="0,5,0,5"
+                                           FontSize="14" Foreground="DarkSlateGray" TextAlignment="Center"/>
+                                <TextBlock Text="{Binding Obligation, StringFormat='📌 {0}'}"  Margin="0,5,0,5"
+                                           FontSize="14" Foreground="DarkSlateGray" TextAlignment="Center"/>
+
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
