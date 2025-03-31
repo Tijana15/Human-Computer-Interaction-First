@@ -13,6 +13,17 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         public EmployeeMainWindow()
         {
             InitializeComponent();
+            Loaded += EmployeeMainWindow_Loaded;
+        }
+        private void EmployeeMainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            contentArea.Content = new CategoriesView();
+
+            if (categoriesButton != null)
+            {
+                activeButton = categoriesButton;
+                activeButton.Background = new SolidColorBrush(Color.FromRgb(72, 122, 122));
+            }
         }
         private void OnCategoriesClick(object sender, RoutedEventArgs e)
         {

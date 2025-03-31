@@ -17,7 +17,7 @@
 
             <Button Content="👥 Employees" Click="OnEmployeesClick"
                  Background="Transparent" Foreground="White" FontSize="16"
-                 BorderThickness="0" Padding="10" Margin="5"/>
+                 BorderThickness="0" Padding="10" Margin="5" x:Name="employeesButton"/>
 
             <Button Content="⚙️ Settings" Click="OnSettingsClick"
                  Background="Transparent" Foreground="White" FontSize="16"

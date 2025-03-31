@@ -14,6 +14,17 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         public AdminMainWindow()
         {
             InitializeComponent();
+            Loaded += AdminMainWindow_Loaded;
+        }
+        private void AdminMainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            contentArea.Content = new EmployeesView();
+
+            if (employeesButton != null)
+            {
+                activeButton = employeesButton;
+                activeButton.Background = new SolidColorBrush(Color.FromRgb(255, 182, 193));
+            }
         }
         private void OnEmployeesClick(object sender, RoutedEventArgs e)
         {
@@ -24,18 +35,24 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             }
 
             activeButton = sender as Button;
-            //activeButton.Background = new SolidColorBrush();
+            activeButton.Background = new SolidColorBrush(Color.FromRgb(255, 182, 193));
 
         }
 
         private void OnSettingsClick(object sender, RoutedEventArgs e)
         {
             contentArea.Content = "Settings Section";
+            if (activeButton != null)
+            {
+                activeButton.Background = Brushes.Transparent;
+            }
+
+            activeButton = sender as Button;
+            activeButton.Background = new SolidColorBrush(Color.FromRgb(255, 182, 193));
         }
 
         private void OnLogoutClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Logging out...", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
