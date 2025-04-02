@@ -23,7 +23,7 @@
         </ComboBox>
 
         <Button Content="💾 Save Changes" Click="OnSaveChangesClick"
-                Foreground="{DynamicResource TextOnNightMode}" Background="{DynamicResource ButtonSaveChanges}"  FontSize="16"
+                Foreground="{DynamicResource TextOnNightMode}" Background="Transparent"  FontSize="16" BorderThickness="2"
                 Padding="10" Margin="20,20,0,0" Width="150"/>
     </StackPanel>
 </UserControl>

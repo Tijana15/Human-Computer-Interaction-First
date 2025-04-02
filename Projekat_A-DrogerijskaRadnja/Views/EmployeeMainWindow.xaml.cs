@@ -21,69 +21,53 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
             if (categoriesButton != null)
             {
-                activeButton = categoriesButton;
-                activeButton.Background = new SolidColorBrush(Color.FromRgb(72, 122, 122));
+                SetActiveButton(categoriesButton);
             }
         }
         private void OnCategoriesClick(object sender, RoutedEventArgs e)
         {
 
-            contentArea.Content = new CategoriesView();
-
-            if (activeButton != null)
+            if (sender != activeButton) 
             {
-                activeButton.Background = Brushes.Transparent;
+                SetActiveButton(sender as Button);
+                contentArea.Content = new CategoriesView();
             }
-
-            activeButton = sender as Button;
-            activeButton.Background = new SolidColorBrush(Color.FromRgb(72, 122, 122));
         }
 
         private void OnSellingItemsClick(object sender, RoutedEventArgs e)
         {
-            contentArea.Content=new SellingItemsView();
-            if (activeButton != null)
+            if (sender != activeButton)
             {
-                activeButton.Background = Brushes.Transparent;
+                SetActiveButton(sender as Button);
+                contentArea.Content = new SellingItemsView();
             }
-
-            activeButton = sender as Button;
-            activeButton.Background = new SolidColorBrush(Color.FromRgb(72, 122, 122));
         }
 
         private void OnBillingClick(object sender, RoutedEventArgs e)
         {
-            if (activeButton != null)
+            if (sender != activeButton) 
             {
-                activeButton.Background = Brushes.Transparent;
+                SetActiveButton(sender as Button);
+                //contentArea.Content = new EmployeesView();
             }
-
-            activeButton = sender as Button;
-            activeButton.Background = new SolidColorBrush(Color.FromRgb(72, 122, 122));
         }
 
         private void OnBillsClick(object sender, RoutedEventArgs e)
         {
-            contentArea.Content = new BillsOverview();
-            if (activeButton != null)
+            if (sender != activeButton) 
             {
-                activeButton.Background = Brushes.Transparent;
+                SetActiveButton(sender as Button);
+                contentArea.Content = new BillsOverview();
             }
-
-            activeButton = sender as Button;
-            activeButton.Background = new SolidColorBrush(Color.FromRgb(72, 122, 122));
         }
 
         private void OnSettingsClick(object sender, RoutedEventArgs e)
         {
-            contentArea.Content=new SettingsView();
-            if (activeButton != null)
+            if (sender != activeButton) 
             {
-                activeButton.Background = Brushes.Transparent;
+                SetActiveButton(sender as Button);
+                contentArea.Content = new SettingsView();
             }
-
-            activeButton = sender as Button;
-            activeButton.Background = new SolidColorBrush(Color.FromRgb(72, 122, 122));
         }
 
         private void OnLogoutClick(object sender, RoutedEventArgs e)
@@ -92,6 +76,23 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void SetActiveButton(Button newActiveButton)
+        {
+            if (activeButton != null)
+            {
+                activeButton.Background = Brushes.Transparent;
+                activeButton.Foreground = Brushes.White;
+            }
+
+            activeButton = newActiveButton;
+
+            if (activeButton != null)
+            {
+                activeButton.Background = Brushes.LightGray;
+                activeButton.Foreground = Brushes.Black;
+            }
         }
 
     }

@@ -12,37 +12,36 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
         <!-- Sidebar -->
-        <StackPanel Background="DarkSlateGray" VerticalAlignment="Stretch">
+        <StackPanel Background="{DynamicResource UserSideBarBackground}" VerticalAlignment="Stretch">
            
             <Button Content="📂 Categories" Click="OnCategoriesClick"
-                    Background="Transparent" Foreground="White" FontSize="16"
+                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5" x:Name="categoriesButton"/>
 
             <Button Content="🛍️ Selling items" Click="OnSellingItemsClick"
-                    Background="Transparent" Foreground="White" FontSize="16"
+                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
 
             <Button Content="📝 Billing" Click="OnBillingClick"
-                    Background="Transparent" Foreground="White" FontSize="16"
+                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
 
             <Button Content="📜 Bills" Click="OnBillsClick"
-                    Background="Transparent" Foreground="White" FontSize="16"
+                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
 
             <Button Content="⚙️ Settings" Click="OnSettingsClick"
-                    Background="Transparent" Foreground="White" FontSize="16"
+                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
 
             <Button Content="🚪 Logout" Click="OnLogoutClick"
-                    Background="Transparent" Foreground="White" FontSize="16"
+                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
         </StackPanel>
 
         <!-- Main part -->
-        <Grid Grid.Column="1" Background="LightGray">
+        <Grid Grid.Column="1" Background="{DynamicResource UserMainBackground}">
             <ContentControl x:Name="contentArea" Grid.Column="1" Background="LightGray"/>
 
         </Grid>

@@ -10,11 +10,11 @@
         <!-- Search and add button -->
             <StackPanel Orientation="Horizontal" Margin="10" Height="30">
             <TextBox x:Name="searchBox" Width="220" VerticalContentAlignment="Center" 
-             Text="Search a category..." Foreground="DarkSlateGray" Background="White"  
+             Text="Search a category..." Foreground="{DynamicResource UserSideBarBackground}"  
              GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="15"/>
-            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="80" Foreground="DarkSlateGray" FontWeight="DemiBold" Background="White"  FontSize="15"></Button>
-            <Button Content="Add" Click="OnAddCategoryClick" Margin="5,0,0,0" Width="80" Foreground="DarkSlateGray" FontWeight="DemiBold" Background="White"  FontSize="15"/>
-            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="80" Foreground="DarkSlateGray" FontWeight="DemiBold" Background="White"  FontSize="15"></Button>
+            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"  FontSize="15"></Button>
+            <Button Content="Add" Click="OnAddCategoryClick" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"   FontSize="15"/>
+            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"  FontSize="15"></Button>
             </StackPanel>
 
         
@@ -22,19 +22,19 @@
          Background="White" BorderThickness="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="DarkSlateGray" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5"
+                    <Border BorderBrush="{DynamicResource UserSideBarBackground}" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5"
                     Background="White" MinHeight="60" HorizontalAlignment="Stretch">
                         <Grid VerticalAlignment="Center">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
-                            
-                            <TextBlock Text="{Binding CategoryId}" FontWeight="Bold" Foreground="DarkSlateGray"
+
+                            <TextBlock Text="{Binding CategoryId}" FontWeight="Bold" Foreground="{DynamicResource UserSideBarBackground}"
                                FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
 
-                            
+                       
                             <StackPanel Grid.Column="1" Margin="10,0,0,0">
                                 <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
                                 <TextBlock Text="{Binding Description}" FontStyle="Italic" FontSize="14" Foreground="Gray"/>

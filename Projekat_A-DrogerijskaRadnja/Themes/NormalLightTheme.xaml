@@ -7,4 +7,9 @@
     <SolidColorBrush x:Key="ButtonColor" Color="HotPink"/>
     <SolidColorBrush x:Key="DeleteButtonColor" Color="IndianRed"/>
 
+    <SolidColorBrush x:Key="UserSideBarBackground" Color="DarkSeaGreen"/>
+    <SolidColorBrush x:Key="UserMainBackground" Color="LightGray"/>
+    <SolidColorBrush x:Key="UserTextColor" Color="White"/>
+    <SolidColorBrush x:Key="UserUpdateButton" Color="YellowGreen"/>
+
 </ResourceDictionary>
