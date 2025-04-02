@@ -10,26 +10,26 @@
         <!-- Search and add button -->
         <StackPanel Orientation="Horizontal" Margin="10">
             <TextBox x:Name="searchBox" Width="210" Height="25" VerticalContentAlignment="Center" 
-                     Text="Search a product..." Foreground="Gray"  
+                     Text="Search a product..." Foreground="{DynamicResource UserSideBarBackground}"  
                      GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="14"/>
-            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="70"/>
-            <Button Content="Add" Click="OnAddSellingItemClick" Margin="5,0,0,0" Width="70"/>
-            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="70"/>
+            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
+            <Button Content="Add" Click="OnAddSellingItemClick" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
+            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
         </StackPanel>
 
         <ListBox x:Name="sellingItemsList" Grid.Row="1" Margin="10" MouseDoubleClick="SellingItemsList_MouseDoubleClick"
-                 Background="White" BorderThickness="0">
+                 Background="{DynamicResource UserMainBackground}" BorderThickness="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="DarkSlateGray" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5"
+                    <Border BorderBrush="{DynamicResource UserSideBarBackground}" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5"
                             Background="White" MinHeight="60" HorizontalAlignment="Stretch">
                         <Grid VerticalAlignment="Center">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            
-                            <TextBlock Text="{Binding ProductId}" FontWeight="Bold" Foreground="DarkSlateGray"
+
+                            <TextBlock Text="{Binding ProductId}" FontWeight="Bold" Foreground="{DynamicResource UserSideBarBackground}"
                                        FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
                             
                             <StackPanel Grid.Column="1" Margin="10,0,0,0">

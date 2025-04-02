@@ -12,8 +12,9 @@
 
         <TextBlock Text="Change Theme:" Foreground="{DynamicResource TextOnNightMode}" FontSize="16"/>
         <ComboBox x:Name="themeComboBox">
-            <ComboBoxItem Content="Light" />
+            <ComboBoxItem Content="Normal" />
             <ComboBoxItem Content="Dark" />
+            <ComboBoxItem Content="Light"/>
         </ComboBox>
 
         <TextBlock Text="Change Language:" FontSize="16" Margin="0,20,0,0" Foreground="{DynamicResource TextOnNightMode}"/>

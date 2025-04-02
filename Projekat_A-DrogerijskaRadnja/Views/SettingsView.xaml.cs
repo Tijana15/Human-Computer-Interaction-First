@@ -15,10 +15,19 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         {
             if (themeComboBox.SelectedItem is ComboBoxItem selectedItem)
             {
-                string themeName = selectedItem.Content.ToString() == "Dark"
-                    ? "NightTheme"
-                    : "NormalLightTheme";
-
+                var themeName = "";
+               if(selectedItem.Content.ToString() == "Dark")
+                {
+                    themeName = "NightTheme";
+                }else if(selectedItem.Content.ToString()== "Light")
+                {
+                    themeName = "LightTheme";
+                }
+                else
+                {
+                    themeName = "NormalLightTheme";
+                }
+                   
                 App.ChangeTheme(themeName);
                 MessageBox.Show($"Tema promijenjena u {selectedItem.Content}!", "Obavještenje");
             }
