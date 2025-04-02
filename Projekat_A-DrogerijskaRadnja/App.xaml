@@ -12,6 +12,8 @@
                     BaseTheme="Light" 
                     PrimaryColor="DeepPurple" 
                     SecondaryColor="Lime" />
+                <ResourceDictionary Source="/Themes/NormalLightTheme.xaml"/>
+                <ResourceDictionary Source="/Themes/NightTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

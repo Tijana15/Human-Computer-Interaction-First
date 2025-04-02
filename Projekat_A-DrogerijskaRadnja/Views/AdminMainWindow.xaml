@@ -6,32 +6,39 @@
         xmlns:local="clr-namespace:Projekat_A_DrogerijskaRadnja.Views"
         mc:Ignorable="d"
         Title="AdminMainWindow" Height="450" Width="800"  WindowState="Maximized">
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Sidebar -->
-        <StackPanel Background="HotPink" VerticalAlignment="Stretch">
+        <StackPanel Background="{DynamicResource SidebarBackground}" VerticalAlignment="Stretch">
 
             <Button Content="👥 Employees" Click="OnEmployeesClick"
-                 Background="Transparent" Foreground="White" FontSize="16"
-                 BorderThickness="0" Padding="10" Margin="5" x:Name="employeesButton"/>
+                 Background="Transparent" 
+                 Foreground="white" 
+                 FontSize="16"
+                 BorderThickness="0" Padding="10" Margin="5" x:Name="employeesButton"
+                  />
 
             <Button Content="⚙️ Settings" Click="OnSettingsClick"
-                 Background="Transparent" Foreground="White" FontSize="16"
-                 BorderThickness="0" Padding="10" Margin="5"/>
+                 Background="Transparent" 
+                 Foreground="White "
+                 FontSize="16"
+                 BorderThickness="0" Padding="10" Margin="5" x:Name="settingsButton"/>
 
             <Button Content="🚪 Log out" Click="OnLogoutClick"
-                 Background="Transparent" Foreground="White" FontSize="16"
+                 Background="Transparent" 
+                 Foreground="White "
+                 FontSize="16"
                  BorderThickness="0" Padding="10" Margin="5"/>
         </StackPanel>
 
         <!-- Glavni sadržaj (desna strana) -->
-        <Grid Grid.Column="1" Background="LightGray">
-            <ContentControl x:Name="contentArea" Grid.Column="1" Background="LightGray"/>
+        <Grid Grid.Column="1" Background="{DynamicResource MainContentBackground}">
+            <ContentControl x:Name="contentArea" Grid.Column="1"/>
         </Grid>
-
     </Grid>
 </Window>

@@ -63,7 +63,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
             if (accountExists)
             {
-                MessageBox.Show("Sucessful!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
                 if (username == "tijana.lazendic") {
                     AdminMainWindow adminWindow = new AdminMainWindow();
                     adminWindow.Show();
