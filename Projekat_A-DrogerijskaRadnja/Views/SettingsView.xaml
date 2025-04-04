@@ -8,22 +8,22 @@
         Height="Auto" Width="Auto"
        >
     <StackPanel Margin="20">
-        <TextBlock Text="Settings" FontSize="20" FontWeight="Bold" Margin="0,0,0,20" Foreground="{DynamicResource TextOnNightMode}"/>
+        <TextBlock Text="{DynamicResource SettingsText}"  FontSize="20" FontWeight="Bold" Margin="0,0,0,20" Foreground="{DynamicResource TextOnNightMode}"/>
 
-        <TextBlock Text="Change Theme:" Foreground="{DynamicResource TextOnNightMode}" FontSize="16"/>
+        <TextBlock Text="{DynamicResource ChangeThemeText}" Foreground="{DynamicResource TextOnNightMode}" FontSize="16" />
         <ComboBox x:Name="themeComboBox">
             <ComboBoxItem Content="Normal" />
             <ComboBoxItem Content="Dark" />
             <ComboBoxItem Content="Light"/>
         </ComboBox>
 
-        <TextBlock Text="Change Language:" FontSize="16" Margin="0,20,0,0" Foreground="{DynamicResource TextOnNightMode}"/>
+        <TextBlock Text="{DynamicResource ChangeLanguageText}" FontSize="16" Margin="0,20,0,0" Foreground="{DynamicResource TextOnNightMode}"/>
         <ComboBox x:Name="languageComboBox" Foreground="Black">
-            <ComboBoxItem Content="English" Tag="en"/>
-            <ComboBoxItem Content="Srpski" Tag="sr"/>
+            <ComboBoxItem Content="English"/>
+            <ComboBoxItem Content="Srpski"/>
         </ComboBox>
 
-        <Button Content="💾 Save Changes" Click="OnSaveChangesClick"
+        <Button Content="{DynamicResource SaveChangesText}" Click="OnSaveChangesClick"
                 Foreground="{DynamicResource TextOnNightMode}" Background="Transparent"  FontSize="16" BorderThickness="2"
                 Padding="10" Margin="20,20,0,0" Width="150"/>
     </StackPanel>

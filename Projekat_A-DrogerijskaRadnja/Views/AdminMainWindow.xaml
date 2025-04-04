@@ -16,20 +16,20 @@
 
         <StackPanel Background="{DynamicResource SidebarBackground}" VerticalAlignment="Stretch">
 
-            <Button Content="👥 Employees" Click="OnEmployeesClick"
+            <Button Content="{DynamicResource EmployeesBar}" Click="OnEmployeesClick"
                  Background="Transparent" 
                  Foreground="white" 
                  FontSize="16"
                  BorderThickness="0" Padding="10" Margin="5" x:Name="employeesButton"
                   />
 
-            <Button Content="⚙️ Settings" Click="OnSettingsClick"
+            <Button Content="{DynamicResource SettingsBar}" Click="OnSettingsClick"
                  Background="Transparent" 
                  Foreground="White "
                  FontSize="16"
                  BorderThickness="0" Padding="10" Margin="5" x:Name="settingsButton"/>
 
-            <Button Content="🚪 Log out" Click="OnLogoutClick"
+            <Button Content="{DynamicResource LogOut}" Click="OnLogoutClick"
                  Background="Transparent" 
                  Foreground="White "
                  FontSize="16"

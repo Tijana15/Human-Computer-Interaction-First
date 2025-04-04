@@ -10,13 +10,13 @@
         <!-- Search and add button -->
         <StackPanel Orientation="Horizontal" Margin="10" Height="30">
             <TextBox x:Name="searchBox" Width="220" VerticalContentAlignment="Center" 
-                     Text="Search an employee..." Foreground="{DynamicResource SidebarBackground}"  Background="White"  
+                     Text="{DynamicResource SearchAnEmployee}" Foreground="{DynamicResource SidebarBackground}"  Background="White"  
                      GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="15"/>
-            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="80" 
+            <Button Content="{DynamicResource SearchButton}"  Click="OnSearchButton" Margin="5,0,0,0" Width="80" 
                     Foreground="{DynamicResource SidebarBackground}" FontWeight="DemiBold" Background="White" FontSize="15"/>
-            <Button Content="Add" Click="OnAddEmployeeClick" Margin="5,0,0,0" Width="80" 
+            <Button Content="{DynamicResource AddButton}"  Click="OnAddEmployeeClick" Margin="5,0,0,0" Width="80" 
                    Foreground="{DynamicResource SidebarBackground}" FontWeight="DemiBold" Background="White" FontSize="15"/>
-            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="80" 
+            <Button Content="{DynamicResource ShowAll}"  Click="OnShowAllButton" Margin="5,0,0,0" Width="80" 
                     Foreground="{DynamicResource SidebarBackground}" FontWeight="DemiBold" Background="White" FontSize="15"/>
         </StackPanel>
 

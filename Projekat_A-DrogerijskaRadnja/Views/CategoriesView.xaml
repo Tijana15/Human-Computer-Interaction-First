@@ -10,11 +10,11 @@
         <!-- Search and add button -->
             <StackPanel Orientation="Horizontal" Margin="10" Height="30">
             <TextBox x:Name="searchBox" Width="220" VerticalContentAlignment="Center" 
-             Text="Search a category..." Foreground="{DynamicResource UserSideBarBackground}"  
+             Text="{DynamicResource SearchCategoryText}" Foreground="{DynamicResource UserSideBarBackground}"  
              GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="15"/>
-            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"  FontSize="15"></Button>
-            <Button Content="Add" Click="OnAddCategoryClick" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"   FontSize="15"/>
-            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"  FontSize="15"></Button>
+            <Button Content="{DynamicResource SearchCategoryButtonText}" Click="OnSearchButton" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"  FontSize="15"></Button>
+            <Button Content="{DynamicResource AddCategoryButtonText}" Click="OnAddCategoryClick" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"   FontSize="15"/>
+            <Button Content="{DynamicResource ShowAllCategories}" Click="OnShowAllButton" Margin="5,0,0,0" Width="80" Foreground="{DynamicResource UserSideBarBackground}" FontWeight="DemiBold"  FontSize="15"></Button>
             </StackPanel>
 
         

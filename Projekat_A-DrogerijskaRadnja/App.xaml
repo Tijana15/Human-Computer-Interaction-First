@@ -7,6 +7,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Languages/English.xaml"/>
+                <ResourceDictionary Source="/Languages/Srpski.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DatePicker.xaml" />
                 <ResourceDictionary Source="/Themes/NormalLightTheme.xaml"/>
                 <ResourceDictionary Source="/Themes/NightTheme.xaml"/>

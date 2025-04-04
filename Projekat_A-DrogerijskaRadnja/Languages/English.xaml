@@ -1,0 +1,67 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="SettingsText">Settings</sys:String>
+    <sys:String x:Key="ChangeThemeText">Change theme</sys:String>
+    <sys:String x:Key="ChangeLanguageText">Change language</sys:String>
+    <sys:String x:Key="SaveChangesText">💾 Save changes</sys:String>
+    <sys:String x:Key="SearchCategoryText">Search category..</sys:String>
+    <sys:String x:Key="SearchCategoryButtonText">Search</sys:String>
+    <sys:String x:Key="AddCategoryButtonText">Add new</sys:String>
+    <sys:String x:Key="ShowAllCategories">Show all</sys:String>
+    <sys:String x:Key="CategoryName">Name:</sys:String>
+    <sys:String x:Key="CategoryDescription">Description:</sys:String>
+    <sys:String x:Key="CategoryDepartment">Department:</sys:String>
+    <sys:String x:Key="DeleteButton">Delete</sys:String>
+    <sys:String x:Key="UpdateButton">Update</sys:String>
+    <sys:String x:Key="SaveButton">Save</sys:String>
+    <sys:String x:Key="CancelButton">Cancel</sys:String>
+
+    <sys:String x:Key="SearchSellingItemText">Search selling items..</sys:String>
+    <sys:String x:Key="SearchSellingItemButtonText">Search</sys:String>
+    <sys:String x:Key="AddSellingItemButtonText">Add new</sys:String>
+    <sys:String x:Key="ShowAllSellingItems">Show all</sys:String>
+
+    <sys:String x:Key="BrandText">Brand: </sys:String>
+    <sys:String x:Key="StockQuantity">Stock quantity: </sys:String>
+    <sys:String x:Key="Integrities">Integrities: </sys:String>
+    <sys:String x:Key="Price">Price: </sys:String>
+
+    <sys:String x:Key="ProductText">Product: </sys:String>
+    <sys:String x:Key="PurchaseText">Purchase: </sys:String>
+
+    <sys:String x:Key="EmployeesBar">👥 Employees</sys:String>
+    <sys:String x:Key="SettingsBar">⚙️ Settings</sys:String>
+    <sys:String x:Key="LogOut">🚪 Log out</sys:String>
+
+    <sys:String x:Key="CategoriesBar">📂 Categories</sys:String>
+    <sys:String x:Key="SellingItemsBar">🛍️ Selling items</sys:String>
+    <sys:String x:Key="BillingBar">📝 Billing</sys:String>
+    <sys:String x:Key="BillsBar">📜 Bills</sys:String>
+
+    <sys:String x:Key="SearchAnEmployee">Search an employee..</sys:String>
+    <sys:String x:Key="SearchButton">Search</sys:String>
+    <sys:String x:Key="AddButton">Add</sys:String>
+    <sys:String x:Key="ShowAll">Show all</sys:String>
+    <sys:String x:Key="Salary">💰 Salary $</sys:String>
+
+
+    <sys:String x:Key="EmployeeName">Name: </sys:String>
+    <sys:String x:Key="EmployeeLastname">Lastname: </sys:String>
+    <sys:String x:Key="EmployeeTelephone">Telephone: </sys:String>
+    <sys:String x:Key="EmployeeAddress">Address: </sys:String>
+    <sys:String x:Key="EmployeeSalary">Salary ($):</sys:String>
+    <sys:String x:Key="EmployeeHireDate">Hire date: </sys:String>
+    <sys:String x:Key="EmployeeShift">Shift: </sys:String>
+    <sys:String x:Key="EmployeeObligation">Obligation: </sys:String>
+    
+    <sys:String x:Key="SelectDate">Select the date</sys:String>
+
+    <sys:String x:Key="SignIn">Sign in</sys:String>
+    <sys:String x:Key="Username">Username</sys:String>
+    <sys:String x:Key="Welcome">Welcome!</sys:String>
+    <sys:String x:Key="Message">Manage accounts or products.</sys:String>
+
+
+
+</ResourceDictionary>

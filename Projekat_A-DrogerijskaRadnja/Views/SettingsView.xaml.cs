@@ -19,7 +19,8 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                if(selectedItem.Content.ToString() == "Dark")
                 {
                     themeName = "NightTheme";
-                }else if(selectedItem.Content.ToString()== "Light")
+                }
+                else if(selectedItem.Content.ToString()== "Light")
                 {
                     themeName = "LightTheme";
                 }
@@ -30,6 +31,19 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                    
                 App.ChangeTheme(themeName);
                 MessageBox.Show($"Tema promijenjena u {selectedItem.Content}!", "Obavještenje");
+            }
+            if(languageComboBox.SelectedItem is ComboBoxItem languageItem)
+            {
+                var language = "";
+                if (languageItem.Content.ToString() == "English")
+                {
+                    language = "English";
+                }
+                else
+                {
+                    language = "Srpski";
+                }
+                App.ChangeLanguage(language);
             }
         }
     }

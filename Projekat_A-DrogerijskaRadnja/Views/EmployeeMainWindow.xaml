@@ -14,28 +14,28 @@
         </Grid.ColumnDefinitions>
         <!-- Sidebar -->
         <StackPanel Background="{DynamicResource UserSideBarBackground}" VerticalAlignment="Stretch">
-           
-            <Button Content="📂 Categories" Click="OnCategoriesClick"
+
+            <Button  Content="{DynamicResource CategoriesBar}" Click="OnCategoriesClick"
                     Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5" x:Name="categoriesButton"/>
 
-            <Button Content="🛍️ Selling items" Click="OnSellingItemsClick"
+            <Button  Content="{DynamicResource SellingItemsBar}" Click="OnSellingItemsClick"
                     Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
 
-            <Button Content="📝 Billing" Click="OnBillingClick"
+            <Button  Content="{DynamicResource BillingBar}" Click="OnBillingClick"
                     Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
 
-            <Button Content="📜 Bills" Click="OnBillsClick"
+            <Button  Content="{DynamicResource BillsBar}" Click="OnBillsClick"
                     Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
 
-            <Button Content="⚙️ Settings" Click="OnSettingsClick"
+            <Button  Content="{DynamicResource SettingsBar}" Click="OnSettingsClick"
                     Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
 
-            <Button Content="🚪 Logout" Click="OnLogoutClick"
+            <Button  Content="{DynamicResource LogOut}" Click="OnLogoutClick"
                     Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
                     BorderThickness="0" Padding="10" Margin="5"/>
         </StackPanel>

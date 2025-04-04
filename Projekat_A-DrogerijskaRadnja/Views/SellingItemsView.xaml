@@ -10,11 +10,11 @@
         <!-- Search and add button -->
         <StackPanel Orientation="Horizontal" Margin="10">
             <TextBox x:Name="searchBox" Width="210" Height="25" VerticalContentAlignment="Center" 
-                     Text="Search a product..." Foreground="{DynamicResource UserSideBarBackground}"  
+                     Text="{DynamicResource SearchSellingItemText}" Foreground="{DynamicResource UserSideBarBackground}"  
                      GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="14"/>
-            <Button Content="Search" Click="OnSearchButton" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
-            <Button Content="Add" Click="OnAddSellingItemClick" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
-            <Button Content="Show all" Click="OnShowAllButton" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
+            <Button Content="{DynamicResource SearchSellingItemButtonText}" Click="OnSearchButton" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
+            <Button Content="{DynamicResource AddSellingItemButtonText}" Click="OnAddSellingItemClick" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
+            <Button Content="{DynamicResource ShowAllSellingItems}" Click="OnShowAllButton" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
         </StackPanel>
 
         <ListBox x:Name="sellingItemsList" Grid.Row="1" Margin="10" MouseDoubleClick="SellingItemsList_MouseDoubleClick"
@@ -35,13 +35,13 @@
                             <StackPanel Grid.Column="1" Margin="10,0,0,0">
                                     <TextBlock Text="{Binding Product.Name}" FontWeight="Bold" FontSize="16" Foreground="Black"/>
                                     <TextBlock Text="{Binding Product.Description}" FontSize="14" Foreground="Gray"/>
-                                    <TextBlock Text="Brand: " FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="{DynamicResource BrandText}" FontWeight="Bold" FontSize="14"/>
                                     <TextBlock Text="{Binding Product.Brand}" FontSize="14" Foreground="Black"/>
-                                    <TextBlock Text="Stock Quantity: " FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="{DynamicResource StockQuantity}" FontWeight="Bold" FontSize="14"/>
                                     <TextBlock Text="{Binding Product.QuantityAvailable}" FontSize="14" Foreground="Black"/>
-                                    <TextBlock Text="Integrities: " FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="{DynamicResource Integrities}" FontWeight="Bold" FontSize="14"/>
                                     <TextBlock Text="{Binding Product.Integrities}" FontSize="14" Foreground="Black"/>
-                                    <TextBlock Text="Price: " FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="{DynamicResource Price}" FontWeight="Bold" FontSize="14"/>
                                     <TextBlock Text="{Binding Price, StringFormat='${0:0.00}'}"
                                            FontSize="14" Foreground="DarkGreen"/>
                                 

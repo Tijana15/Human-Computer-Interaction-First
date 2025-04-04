@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="SettingsText">Podešavanja</sys:String>
+    <sys:String x:Key="ChangeThemeText">Izmjena teme</sys:String>
+    <sys:String x:Key="ChangeLanguageText">Promijeni jezik</sys:String>
+    <sys:String x:Key="SaveChangesText">💾 Sačuvaj promjene</sys:String>
+    
+    <sys:String x:Key="SearchCategoryText">Pretraži kategoriju..</sys:String>
+    <sys:String x:Key="SearchCategoryButtonText">Pretraži</sys:String>
+    <sys:String x:Key="AddCategoryButtonText">Dodaj novu</sys:String>
+    <sys:String x:Key="ShowAllCategories">Prikaži sve</sys:String>
+    
+    <sys:String x:Key="CategoryName">Naziv:</sys:String>
+    <sys:String x:Key="CategoryDescription">Opis:</sys:String>
+    <sys:String x:Key="CategoryDepartment">Odjel:</sys:String>
+    <sys:String x:Key="DeleteButton">Izbriši</sys:String>
+    <sys:String x:Key="UpdateButton">Izmijeni</sys:String>
+    <sys:String x:Key="SaveButton">Sačuvaj</sys:String>
+    <sys:String x:Key="CancelButton">Otkaži</sys:String>
+
+    <sys:String x:Key="SearchSellingItemText">Pretraži prodajne artikle..</sys:String>
+    <sys:String x:Key="SearchSellingItemButtonText">Pretraga</sys:String>
+    <sys:String x:Key="AddSellingItemButtonText">Dodaj novi</sys:String>
+    <sys:String x:Key="ShowAllSellingItems">Prikaži sve</sys:String>
+
+    <sys:String x:Key="BrandText">Brend: </sys:String>
+    <sys:String x:Key="StockQuantity">Količina na stanju: </sys:String>
+    <sys:String x:Key="Integrities">Sastav: </sys:String>
+    <sys:String x:Key="Price">Cijena: </sys:String>
+
+    <sys:String x:Key="ProductText">Proizvod: </sys:String>
+    <sys:String x:Key="PurchaseText">Nabavka: </sys:String>
+
+    <sys:String x:Key="EmployeesBar">👥 Zaposleni</sys:String>
+    <sys:String x:Key="SettingsBar">⚙️ Podešavanja</sys:String>
+    <sys:String x:Key="LogOut">🚪 Odjava</sys:String>
+
+    <sys:String x:Key="CategoriesBar">📂 Kategorije</sys:String>
+    <sys:String x:Key="SellingItemsBar">🛍️ Prodajni artikli</sys:String>
+    <sys:String x:Key="BillingBar">📝 Izdavanje računa</sys:String>
+    <sys:String x:Key="BillsBar">📜 Računi</sys:String>
+
+    <sys:String x:Key="SearchAnEmployee">Pretraži zaposlene..</sys:String>
+    <sys:String x:Key="SearchButton">Pretraga</sys:String>
+    <sys:String x:Key="AddButton">Dodaj novog</sys:String>
+    <sys:String x:Key="ShowAll">Prikaži sve</sys:String>
+    <sys:String x:Key="Salary">💰 Plata $</sys:String>
+
+    <sys:String x:Key="EmployeeName">Ime: </sys:String>
+    <sys:String x:Key="EmployeeLastname">Prezime: </sys:String>
+    <sys:String x:Key="EmployeeTelephone">Telefon: </sys:String>
+    <sys:String x:Key="EmployeeAddress">Adresa: </sys:String>
+    <sys:String x:Key="EmployeeSalary">Plata ($): </sys:String>
+    <sys:String x:Key="EmployeeHireDate">Datum zapošljenja: </sys:String>
+    <sys:String x:Key="EmployeeShift">Smjena: </sys:String>
+    <sys:String x:Key="EmployeeObligation">Zaduženje: </sys:String>
+    <sys:String x:Key="SelectDate">Odaberite datum</sys:String>
+
+    <sys:String x:Key="SignIn">Prijavite se</sys:String>
+    <sys:String x:Key="Username">Korisničko ime</sys:String>
+    <sys:String x:Key="Welcome">Dobrodošli!</sys:String>
+    <sys:String x:Key="Message">Upravljajte nalozima ili proizvodima.</sys:String>
+
+
+</ResourceDictionary>
