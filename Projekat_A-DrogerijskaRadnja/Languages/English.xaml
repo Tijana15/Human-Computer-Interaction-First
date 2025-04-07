@@ -61,6 +61,10 @@
     <sys:String x:Key="Username">Username</sys:String>
     <sys:String x:Key="Welcome">Welcome!</sys:String>
     <sys:String x:Key="Message">Manage accounts or products.</sys:String>
+    <sys:String x:Key="Password">Password</sys:String>
+    <sys:String x:Key="AdminDashboard">Admin dashboard</sys:String>
+    <sys:String x:Key="PersonalData">Personal data</sys:String>
+    <sys:String x:Key="BusinessData">Business data</sys:String>
 
 
 

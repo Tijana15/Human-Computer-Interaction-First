@@ -5,26 +5,107 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_A_DrogerijskaRadnja.Views"
         mc:Ignorable="d"
-        Height="Auto" Width="Auto"
-       >
-    <StackPanel Margin="20">
-        <TextBlock Text="{DynamicResource SettingsText}"  FontSize="20" FontWeight="Bold" Margin="0,0,0,20" Foreground="{DynamicResource TextOnNightMode}"/>
+        Height="Auto" Width="Auto">
 
-        <TextBlock Text="{DynamicResource ChangeThemeText}" Foreground="{DynamicResource TextOnNightMode}" FontSize="16" />
-        <ComboBox x:Name="themeComboBox">
-            <ComboBoxItem Content="Normal" />
-            <ComboBoxItem Content="Dark" />
-            <ComboBoxItem Content="Light"/>
-        </ComboBox>
+    <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <TextBlock Text="{DynamicResource ChangeLanguageText}" FontSize="16" Margin="0,20,0,0" Foreground="{DynamicResource TextOnNightMode}"/>
-        <ComboBox x:Name="languageComboBox" Foreground="Black">
-            <ComboBoxItem Content="English"/>
-            <ComboBoxItem Content="Srpski"/>
-        </ComboBox>
+        <!-- Naslov sekcije -->
+        <TextBlock Grid.Row="0" Text="{DynamicResource SettingsText}" FontSize="24" FontWeight="Bold" 
+                   Margin="0,0,0,20" Foreground="{DynamicResource TextOnNightMode}"/>
 
-        <Button Content="{DynamicResource SaveChangesText}" Click="OnSaveChangesClick"
-                Foreground="{DynamicResource TextOnNightMode}" Background="Transparent"  FontSize="16" BorderThickness="2"
-                Padding="10" Margin="20,20,0,0" Width="150"/>
-    </StackPanel>
+        <!-- Glavni sadržaj u kartici sa senkom -->
+        <Border Grid.Row="1" CornerRadius="12" Background="{DynamicResource CardBackground}" Padding="20" 
+                BorderBrush="{DynamicResource SidebarBackground}" BorderThickness="1">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2" BlurRadius="8" Opacity="0.2"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <!-- Tema -->
+                <Border Background="{DynamicResource ControlBackground}" CornerRadius="10" Padding="15" Margin="0,0,0,20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Naslov sekcije za temu -->
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="🎨" FontSize="18" Margin="0,0,10,0"/>
+                            <TextBlock Text="{DynamicResource ChangeThemeText}" Foreground="{DynamicResource TextOnNightMode}" 
+                                       FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <!-- Dropdown za temu -->
+                        <ComboBox Grid.Row="1" x:Name="themeComboBox" Height="40" 
+                                  BorderThickness="1" BorderBrush="{DynamicResource SidebarBackground}" 
+                                  Background="White" Padding="10,5">
+                            <ComboBoxItem Content="Normal"/>
+                            <ComboBoxItem Content="Dark"/>
+                            <ComboBoxItem Content="Light"/>
+                        </ComboBox>
+                    </Grid>
+                </Border>
+
+                <!-- Jezik -->
+                <Border Background="{DynamicResource ControlBackground}" CornerRadius="10" Padding="15" Margin="0,0,0,20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Naslov sekcije za jezik -->
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="🌍" FontSize="18" Margin="0,0,10,0"/>
+                            <TextBlock Text="{DynamicResource ChangeLanguageText}" Foreground="{DynamicResource TextOnNightMode}" 
+                                       FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <!-- Dropdown za jezik -->
+                        <ComboBox Grid.Row="1" x:Name="languageComboBox" Height="40" 
+                                  BorderThickness="1" BorderBrush="{DynamicResource SidebarBackground}" 
+                                  Background="White" Padding="10,5">
+                            <ComboBoxItem Content="English"/>
+                            <ComboBoxItem Content="Srpski"/>
+                        </ComboBox>
+                    </Grid>
+                </Border>
+
+                <!-- Dugme za čuvanje -->
+                <Button Content="{DynamicResource SaveChangesText}" Click="OnSaveChangesClick"
+                        Background="{DynamicResource SidebarBackground}" Foreground="White" 
+                        FontSize="16" FontWeight="SemiBold" BorderThickness="0"
+                        Padding="15" Margin="0,10,0,0" Height="50" HorizontalAlignment="Right" MinWidth="180">
+                    <Button.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border CornerRadius="8" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Opacity" Value="0.9"/>
+                                                <Setter Property="RenderTransform">
+                                                    <Setter.Value>
+                                                        <ScaleTransform ScaleX="1.02" ScaleY="1.02"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
 </UserControl>

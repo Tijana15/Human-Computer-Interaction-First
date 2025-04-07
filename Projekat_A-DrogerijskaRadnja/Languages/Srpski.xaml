@@ -61,6 +61,11 @@
     <sys:String x:Key="Username">Korisničko ime</sys:String>
     <sys:String x:Key="Welcome">Dobrodošli!</sys:String>
     <sys:String x:Key="Message">Upravljajte nalozima ili proizvodima.</sys:String>
+    <sys:String x:Key="Password">Lozinka</sys:String>
+
+    <sys:String x:Key="AdminDashboard">Administratorska kontrolna tabla</sys:String>
+    <sys:String x:Key="PersonalData">Lični podaci</sys:String>
+    <sys:String x:Key="BusinessData">Poslovni podaci</sys:String>
 
 
 </ResourceDictionary>

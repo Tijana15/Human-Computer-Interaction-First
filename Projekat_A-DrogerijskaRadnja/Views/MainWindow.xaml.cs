@@ -17,43 +17,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             accountService = new AccountService();
         }
 
-        private void RemovePlaceholder(object sender, RoutedEventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null && textBox.Text == textBox.Tag.ToString())
-            {
-                textBox.Text = string.Empty;
-                textBox.Foreground = Brushes.Black;
-            }
-        }
-        private void SetPlaceholder(object sender, RoutedEventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                textBox.Text = textBox.Tag.ToString();
-                textBox.Foreground = Brushes.Gray;
-            }
-        }
-        private void RemovePasswordPlaceholder(object sender, RoutedEventArgs e)
-        {
-            PasswordBox passwordBox = sender as PasswordBox;
-            if (passwordBox != null && passwordBox.Password == passwordBox.Tag.ToString())
-            {
-                passwordBox.Password = string.Empty;
-                passwordBox.Foreground = Brushes.Black;
-            }
-        }
-        private void SetPasswordPlaceholder(object sender, RoutedEventArgs e)
-        {
-            PasswordBox passwordBox = sender as PasswordBox;
-            if (passwordBox != null && string.IsNullOrWhiteSpace(passwordBox.Password))
-            {
-                passwordBox.Password = passwordBox.Tag.ToString();
-                passwordBox.Foreground = Brushes.Gray;
-            }
-        }
-
         private void OnSignIn(object sender, RoutedEventArgs e)
         {
             username = usernameTxt.Text;
