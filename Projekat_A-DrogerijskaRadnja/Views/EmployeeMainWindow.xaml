@@ -5,46 +5,126 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_A_DrogerijskaRadnja.Views"
         mc:Ignorable="d"
-        Title="EmployeeMainWindow" Height="450" Width="800">
+        Title="EmployeeMainWindow" Height="750" Width="1200"
+        MinHeight="550" MinWidth="800"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
-        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="Auto" MinWidth="200" MaxWidth="300"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <!-- Sidebar -->
-        <StackPanel Background="{DynamicResource UserSideBarBackground}" VerticalAlignment="Stretch">
 
-            <Button  Content="{DynamicResource CategoriesBar}" Click="OnCategoriesClick"
-                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
-                    BorderThickness="0" Padding="10" Margin="5" x:Name="categoriesButton"/>
+        <!-- Sidebar with improved styling -->
+        <Border Background="{DynamicResource UserSideBarBackground}" 
+                BorderBrush="{DynamicResource BorderColor}" 
+                BorderThickness="0,0,1,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <Button  Content="{DynamicResource SellingItemsBar}" Click="OnSellingItemsClick"
-                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
-                    BorderThickness="0" Padding="10" Margin="5"/>
+                <StackPanel Grid.Row="0" Margin="20,30,20,40">
+                    <TextBlock Text="🧼" FontSize="36" Foreground="White" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Beauty &amp; more" FontSize="20" FontWeight="Bold" Foreground="White" 
+              HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    <TextBlock Text="Be beauty. Be brave. Be you." FontSize="14" Foreground="White" Opacity="0.7" 
+              HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                </StackPanel>
 
-            <Button  Content="{DynamicResource BillingBar}" Click="OnBillingClick"
-                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
-                    BorderThickness="0" Padding="10" Margin="5"/>
+                <!-- Navigation Buttons -->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,15,0,0">
+                    <StackPanel>
+                        <Button Content="{DynamicResource CategoriesBar}" 
+                                Click="OnCategoriesClick"
+                                Style="{StaticResource SidebarButtonStyle}" 
+                                x:Name="categoriesButton">
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="1" Direction="270" BlurRadius="5" Opacity="0.2" Color="Black"/>
+                            </Button.Effect>
+                        </Button>
 
-            <Button  Content="{DynamicResource BillsBar}" Click="OnBillsClick"
-                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
-                    BorderThickness="0" Padding="10" Margin="5"/>
+                        <Button Content="{DynamicResource SellingItemsBar}" 
+                                Click="OnSellingItemsClick"
+                                Style="{StaticResource SidebarButtonStyle}">
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="1" Direction="270" BlurRadius="5" Opacity="0.2" Color="Black"/>
+                            </Button.Effect>
+                        </Button>
 
-            <Button  Content="{DynamicResource SettingsBar}" Click="OnSettingsClick"
-                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
-                    BorderThickness="0" Padding="10" Margin="5"/>
+                        <Button Content="{DynamicResource BillingBar}" 
+                                Click="OnBillingClick"
+                                Style="{StaticResource SidebarButtonStyle}">
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="1" Direction="270" BlurRadius="5" Opacity="0.2" Color="Black"/>
+                            </Button.Effect>
+                        </Button>
 
-            <Button  Content="{DynamicResource LogOut}" Click="OnLogoutClick"
-                    Background="Transparent" Foreground="{DynamicResource UserTextColor}" FontSize="16"
-                    BorderThickness="0" Padding="10" Margin="5"/>
-        </StackPanel>
+                        <Button Content="{DynamicResource BillsBar}" 
+                                Click="OnBillsClick"
+                                Style="{StaticResource SidebarButtonStyle}">
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="1" Direction="270" BlurRadius="5" Opacity="0.2" Color="Black"/>
+                            </Button.Effect>
+                        </Button>
 
-        <!-- Main part -->
-        <Grid Grid.Column="1" Background="{DynamicResource UserMainBackground}">
-            <ContentControl x:Name="contentArea" Grid.Column="1" Background="LightGray"/>
+                        <Button Content="{DynamicResource SettingsBar}" 
+                                Click="OnSettingsClick"
+                                Style="{StaticResource SidebarButtonStyle}">
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="1" Direction="270" BlurRadius="5" Opacity="0.2" Color="Black"/>
+                            </Button.Effect>
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
 
-        </Grid>
+                <!-- Logout button at bottom -->
+                <Button Grid.Row="2" 
+                        Content="{DynamicResource LogOut}" 
+                        Click="OnLogoutClick"
+                        Style="{StaticResource SidebarButtonStyle}" 
+                        Margin="0,10,0,20">
+                    <Button.Background>
+                        <SolidColorBrush Color="#F87171" Opacity="0.2"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- Main content area with shadow and padding -->
+        <Border Grid.Column="1" 
+                Background="{DynamicResource UserMainBackground}" 
+                Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Page Header -->
+                <Border Grid.Row="0" 
+                        BorderThickness="0,0,0,1" 
+                        BorderBrush="{DynamicResource BorderColor}" 
+                        Padding="0,0,0,15" 
+                        Margin="0,0,0,15">
+                    <TextBlock x:Name="pageTitle" 
+                               Text="{DynamicResource EmployeeDashboard}" 
+                               FontSize="24" 
+                               FontWeight="SemiBold" 
+                               Foreground="{DynamicResource UserSideBarBackground}"/>
+                </Border>
+
+                <!-- Content Area -->
+                <Border Grid.Row="1" 
+                        Background="White" 
+                        CornerRadius="8"
+                        Effect="{DynamicResource ContentShadow}">
+                    <ContentControl x:Name="contentArea" 
+                                   Padding="15"/>
+                </Border>
+            </Grid>
+        </Border>
     </Grid>
-
 </Window>

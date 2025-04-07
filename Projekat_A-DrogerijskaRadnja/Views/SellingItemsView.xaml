@@ -1,57 +1,108 @@
 ﻿<UserControl x:Class="Projekat_A_DrogerijskaRadnja.Views.SellingItemsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid>
+    <Grid Margin="15">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Search and add button -->
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <TextBox x:Name="searchBox" Width="210" Height="25" VerticalContentAlignment="Center" 
-                     Text="{DynamicResource SearchSellingItemText}" Foreground="{DynamicResource UserSideBarBackground}"  
-                     GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" FontSize="14"/>
-            <Button Content="{DynamicResource SearchSellingItemButtonText}" Click="OnSearchButton" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
-            <Button Content="{DynamicResource AddSellingItemButtonText}" Click="OnAddSellingItemClick" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
-            <Button Content="{DynamicResource ShowAllSellingItems}" Click="OnShowAllButton" Margin="5,0,0,0" Width="70" Foreground="{DynamicResource UserSideBarBackground}"  FontWeight="bold"/>
-        </StackPanel>
+        <!-- Naslov i pretraga -->
+        <StackPanel Grid.Row="0" Margin="15,0,15,15">
+            <TextBlock Text="{DynamicResource SellingItemsListTitle}" FontSize="20" FontWeight="Bold"
+                       Foreground="{DynamicResource UserSideBarBackground}" Margin="0,0,0,15"/>
 
-        <ListBox x:Name="sellingItemsList" Grid.Row="1" Margin="10" MouseDoubleClick="SellingItemsList_MouseDoubleClick"
-                 Background="{DynamicResource UserMainBackground}" BorderThickness="0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="{DynamicResource UserSideBarBackground}" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5"
-                            Background="White" MinHeight="60" HorizontalAlignment="Stretch">
-                        <Grid VerticalAlignment="Center">
+            <Border CornerRadius="10" Background="White" Padding="10" Margin="-15,-15,0,10"
+                    BorderBrush="{DynamicResource UserSideBarBackground}" BorderThickness="1">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1" BlurRadius="5" Opacity="0.2"/>
+                </Border.Effect>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Polje za pretragu sa ikonom -->
+                    <Border Grid.Column="0" CornerRadius="8" Background="#F7F9FC" BorderBrush="#E0E7FF" BorderThickness="1">
+                        <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="{Binding ProductId}" FontWeight="Bold" Foreground="{DynamicResource UserSideBarBackground}"
-                                       FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-                            
-                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                                    <TextBlock Text="{Binding Product.Name}" FontWeight="Bold" FontSize="16" Foreground="Black"/>
-                                    <TextBlock Text="{Binding Product.Description}" FontSize="14" Foreground="Gray"/>
-                                    <TextBlock Text="{DynamicResource BrandText}" FontWeight="Bold" FontSize="14"/>
-                                    <TextBlock Text="{Binding Product.Brand}" FontSize="14" Foreground="Black"/>
-                                    <TextBlock Text="{DynamicResource StockQuantity}" FontWeight="Bold" FontSize="14"/>
-                                    <TextBlock Text="{Binding Product.QuantityAvailable}" FontSize="14" Foreground="Black"/>
-                                    <TextBlock Text="{DynamicResource Integrities}" FontWeight="Bold" FontSize="14"/>
-                                    <TextBlock Text="{Binding Product.Integrities}" FontSize="14" Foreground="Black"/>
-                                    <TextBlock Text="{DynamicResource Price}" FontWeight="Bold" FontSize="14"/>
-                                    <TextBlock Text="{Binding Price, StringFormat='${0:0.00}'}"
-                                           FontSize="14" Foreground="DarkGreen"/>
-                                
-                                </StackPanel>
-                            
+                            <TextBlock Grid.Column="0" Text="🔍" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#8896B8"/>
+                            <TextBox x:Name="searchBox" Grid.Column="1" Padding="8,10" BorderThickness="0" Background="Transparent"
+                                     VerticalContentAlignment="Center" Text="{DynamicResource SearchSellingItemText}" 
+                                     Foreground="{DynamicResource UserSideBarBackground}" FontSize="14"
+                                     GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" />
                         </Grid>
                     </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
 
+                    <!-- Dugmad sa ActionButtonStyle -->
+                    <Button Grid.Column="1" Content="{DynamicResource SearchSellingItemButtonText}" Click="OnSearchButton" 
+                            Margin="8,0,0,0" Padding="12,10" MinWidth="90"
+                            Foreground="White" Background="{DynamicResource UserSideBarBackground}" FontWeight="SemiBold" FontSize="14"
+                            BorderThickness="0" VerticalAlignment="Stretch" Style="{DynamicResource ActionButtonStyle}"/>
+
+                    <Button Grid.Column="2" Content="{DynamicResource AddSellingItemButtonText}" Click="OnAddSellingItemClick" 
+                            Margin="8,0,0,0" Padding="12,10" MinWidth="90"
+                            Foreground="White" Background="{DynamicResource UserSideBarBackground}" FontWeight="SemiBold" FontSize="14"
+                            BorderThickness="0" VerticalAlignment="Stretch" Style="{DynamicResource ActionButtonStyle}"/>
+
+                    <Button Grid.Column="3" Content="{DynamicResource ShowAllSellingItems}" Click="OnShowAllButton" 
+                            Margin="8,0,0,0" Padding="12,10" MinWidth="90"
+                            Foreground="White" Background="{DynamicResource UserSideBarBackground}" FontWeight="SemiBold" FontSize="14"
+                            BorderThickness="0" VerticalAlignment="Stretch" Style="{DynamicResource ActionButtonStyle}"/>
+                </Grid>
+            </Border>
+        </StackPanel>
+
+        <!-- Lista artikala -->
+        <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="8">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ListBox x:Name="sellingItemsList" 
+                         MouseDoubleClick="SellingItemsList_MouseDoubleClick"
+                         Background="Transparent" 
+                         BorderThickness="0" 
+                         Padding="10">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="6" Padding="15" Margin="0,5" Background="White">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Product ID -->
+                                    <Border Grid.Column="0" Background="{DynamicResource UserSideBarBackground}" Width="40" Height="40" CornerRadius="20" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding ProductId}" FontWeight="SemiBold" Foreground="White"
+                                                   FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+
+                                    <!-- Detalji artikla -->
+                                    <StackPanel Grid.Column="1" Margin="15,0,0,0" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding Product.Name}" FontWeight="SemiBold" FontSize="16"/>
+                                        <TextBlock Text="{Binding Product.Description}" FontStyle="Italic" FontSize="14" Foreground="#707070" Margin="0,5,0,0"/>
+                                        <TextBlock Text="{DynamicResource BrandText}" FontWeight="Bold" FontSize="14"/>
+                                        <TextBlock Text="{Binding Product.Brand}" FontSize="14" Foreground="Black"/>
+                                        <TextBlock Text="{DynamicResource StockQuantity}" FontWeight="Bold" FontSize="14"/>
+                                        <TextBlock Text="{Binding Product.QuantityAvailable}" FontSize="14" Foreground="Black"/>
+                                        <TextBlock Text="{DynamicResource Integrities}" FontWeight="Bold" FontSize="14"/>
+                                        <TextBlock Text="{Binding Product.Integrities}" FontSize="14" Foreground="Black"/>
+                                        <TextBlock Text="{DynamicResource Price}" FontWeight="Bold" FontSize="14"/>
+                                        <TextBlock Text="{Binding Price, StringFormat='${0:0.00}'}" FontSize="14" Foreground="DarkGreen"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </UserControl>

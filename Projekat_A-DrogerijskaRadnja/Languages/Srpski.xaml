@@ -64,6 +64,8 @@
     <sys:String x:Key="Password">Lozinka</sys:String>
 
     <sys:String x:Key="AdminDashboard">Administratorska kontrolna tabla</sys:String>
+    <sys:String x:Key="EmployeeDashboard">Kontrolna tabla zaposlenog</sys:String>
+
     <sys:String x:Key="PersonalData">Lični podaci</sys:String>
     <sys:String x:Key="BusinessData">Poslovni podaci</sys:String>
 
