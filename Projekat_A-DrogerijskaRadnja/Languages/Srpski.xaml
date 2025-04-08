@@ -68,6 +68,7 @@
 
     <sys:String x:Key="PersonalData">Lični podaci</sys:String>
     <sys:String x:Key="BusinessData">Poslovni podaci</sys:String>
+    <sys:String x:Key="Rights">© 2025 Drogerija. Sva prava zadržana.</sys:String>
 
 
 </ResourceDictionary>

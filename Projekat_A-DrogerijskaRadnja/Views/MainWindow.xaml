@@ -20,6 +20,8 @@
                 </LinearGradientBrush>
             </Grid.Background>
 
+           
+
             <Border Margin="20" Background="#33FFFFFF" CornerRadius="20" Padding="30">
                 <StackPanel VerticalAlignment="Center">
                     <Image  Width="150" Height="150" 
@@ -49,9 +51,22 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- App name at top -->
-                <TextBlock Text="" FontSize="20" FontWeight="SemiBold" 
-                           HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="#555555"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0">
+                    <Button x:Name="btnBosnian" Width="50" Height="30" 
+             Click="OnSerbianLanguage" Content=" 🇷🇸 SR "
+             Style="{DynamicResource RoundedButtonStyle}"
+             ToolTip="Srpski"
+             Margin="0,0,10,0" FontWeight="SemiBold"
+             BorderThickness="0" Background="{DynamicResource ButtonColor}" Opacity="0.9">
+                    </Button>
+
+                    <Button x:Name="btnEnglish" Width="50" Height="30" 
+             Click="OnEnglishLanguage" Content="🇺🇸 EN"
+             Style="{DynamicResource RoundedButtonStyle}" FontWeight="SemiBold"
+             ToolTip="English"
+             BorderThickness="0" Background="{DynamicResource ButtonColor}" >
+                    </Button>
+                </StackPanel>
 
                 <!-- Login Form -->
                 <Border Grid.Row="1" 
@@ -93,7 +108,7 @@
                         <TextBox x:Name="usernameTxt" Height="45" Margin="0,0,0,20"
                                  Text="{DynamicResource Username}"
                                  Foreground="Gray" 
-                                 GotFocus="ClearPlaceholderText" LostFocus="RestorePlaceholderText"
+                                 GotFocus="ClearPlaceholderText" LostFocus="RestorePasswordPlaceholder"
                                  FontSize="16" Style="{DynamicResource ModernTextBoxStyle}"/>
 
                         <TextBlock Text="{DynamicResource Password}" Margin="0,0,0,8" FontSize="14" Foreground="#666666"/>
@@ -125,7 +140,7 @@
                     </StackPanel>
                 </Border>
 
-                <TextBlock Grid.Row="2" Text="© 2025 Drogerijska Radnja. Sva prava zadržana." 
+                <TextBlock Grid.Row="2" Text="{DynamicResource Rights}" 
                            HorizontalAlignment="Center" Margin="0,20" 
                            FontSize="12" Foreground="#AAAAAA"/>
             </Grid>

@@ -67,7 +67,7 @@
 
     <sys:String x:Key="PersonalData">Personal data</sys:String>
     <sys:String x:Key="BusinessData">Business data</sys:String>
-
+    <sys:String x:Key="Rights">© 2025 Drogerie. All rights reserved.</sys:String>
 
 
 </ResourceDictionary>

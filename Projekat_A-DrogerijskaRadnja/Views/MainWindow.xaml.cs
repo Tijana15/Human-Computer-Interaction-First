@@ -15,6 +15,8 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         {
             InitializeComponent();
             accountService = new AccountService();
+            App.ChangeLanguage("English");
+
         }
 
         private void OnSignIn(object sender, RoutedEventArgs e)
@@ -84,6 +86,29 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 passwordBox.Password = "Password";
                 passwordBox.Foreground = Brushes.Gray;
             }
+        }
+        private void OnSerbianLanguage(object sender, RoutedEventArgs e)
+        {
+            btnBosnian.Background = (Brush)FindResource("ButtonColor");
+            btnBosnian.Opacity = 1;
+
+            btnEnglish.Background = (Brush)FindResource("DeleteButtonColor");
+            btnEnglish.Opacity = 0.6;
+
+            App.ChangeLanguage("Srpski");
+            
+        }
+
+        private void OnEnglishLanguage(object sender, RoutedEventArgs e)
+        {
+            btnEnglish.Background = (Brush)FindResource("ButtonColor");
+            btnEnglish.Opacity = 1;
+
+            btnBosnian.Background = (Brush)FindResource("DeleteButtonColor");
+            btnBosnian.Opacity = 0.6;
+
+            App.ChangeLanguage("English");
+            
         }
     }
 }
