@@ -15,6 +15,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         {
             InitializeComponent();
             Loaded += AdminMainWindow_Loaded;
+           
         }
         private void AdminMainWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -28,7 +29,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         }
         private void OnEmployeesClick(object sender, RoutedEventArgs e)
         {
-            if (sender != activeButton) // Izbegavamo nepotrebno resetovanje boja ako je već aktivno
+            if (sender != activeButton) 
             {
                 SetActiveButton(sender as Button);
                 contentArea.Content = new EmployeesView();

@@ -14,8 +14,19 @@ namespace Projekat_A_DrogerijskaRadnja
             try
             {
                 var themeUri = new Uri($"/Themes/{themeName}.xaml", UriKind.Relative);
+                var newResourceDictionary = new ResourceDictionary { Source = themeUri };
+                var oldDictionaries = Application.Current.Resources.MergedDictionaries
+                                 .Where(d => !d.Source?.OriginalString.Contains("/Themes/") ?? true)
+                                 .ToList();
                 Current.Resources.MergedDictionaries.Clear();
                 Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = themeUri });
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(newResourceDictionary);
+
+                foreach (var dict in oldDictionaries)
+                {
+                    Application.Current.Resources.MergedDictionaries.Add(dict);
+                }
             }
             catch (Exception ex)
             {

@@ -10,11 +10,14 @@ namespace Projekat_A_DrogerijskaRadnja.Views
     public partial class EmployeeMainWindow : Window
     {
         private Button activeButton = null;
+        
         public EmployeeMainWindow()
         {
             InitializeComponent();
             Loaded += EmployeeMainWindow_Loaded;
+            
         }
+        
         private void EmployeeMainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             contentArea.Content = new CategoriesView();

@@ -8,15 +8,22 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 {
     public partial class MainWindow : Window
     {
-        private readonly AccountService accountService;
+        public readonly AccountService accountService;
         private string username;
         private string password;
+        public string LoggedInUsername { get; set; }
+        public string LoggedInPassword { get; set; }
+        public string LoggedInTheme { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             accountService = new AccountService();
             App.ChangeLanguage("English");
+            btnEnglish.Background = (Brush)FindResource("ButtonColor");
+            btnEnglish.Opacity = 1;
 
+            btnBosnian.Background = (Brush)FindResource("DeleteButtonColor");
+            btnBosnian.Opacity = 0.6;
         }
 
         private void OnSignIn(object sender, RoutedEventArgs e)
@@ -32,12 +39,31 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 {
                     AdminMainWindow adminWindow = new AdminMainWindow();
                     adminWindow.Show();
+                    this.LoggedInUsername = username;
+                    this.LoggedInPassword = password;
+                    var theme = accountService.GetUserTheme(username, password);
+                    this.LoggedInTheme = theme;
+                    Application.Current.Properties["Username"] = LoggedInUsername;
+                    Application.Current.Properties["Password"] = LoggedInPassword;
+                    Application.Current.Properties["Theme"] = LoggedInTheme;
+                    App.ChangeTheme(LoggedInTheme);
+
                 }
                 else
                 {
                     EmployeeMainWindow empWindow = new EmployeeMainWindow();
                     empWindow.Show();
+                    this.LoggedInUsername = username;
+                    this.LoggedInPassword = password;
+                    var theme = accountService.GetUserTheme(username, password);
+                    this.LoggedInTheme = theme;
+                    Application.Current.Properties["Username"] = LoggedInUsername;
+                    Application.Current.Properties["Password"] = LoggedInPassword;
+                    Application.Current.Properties["Theme"] = LoggedInTheme;
+                    App.ChangeTheme(LoggedInTheme);
                 }
+                
+
                 this.Close();
             }
             else
@@ -48,6 +74,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 passwordTxt.Clear();
             }
         }
+        
         private void ClearPlaceholderText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;

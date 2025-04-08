@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projekat_A_DrogerijskaRadnja.Services;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,9 +38,18 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 Application.Current.Resources.MergedDictionaries.Remove(currentTheme);
 
             ResourceDictionary newTheme = new ResourceDictionary();
-            newTheme.Source = new Uri($"Themes/{themeName}.xaml", UriKind.Relative);
+            newTheme.Source = new Uri($"/Themes/{themeName}.xaml", UriKind.Relative);
             Application.Current.Resources.MergedDictionaries.Add(newTheme);
 
+            var username = Application.Current.Properties["Username"] as string;
+            var password = Application.Current.Properties["Password"] as string;
+         
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
+            {
+                var service = new AccountService();
+                service.UpdateThemeForUser(username, password, themeName);
+            }
         }
+
     }
 }
