@@ -93,12 +93,14 @@
                         <TextBox x:Name="usernameTxt" Height="45" Margin="0,0,0,20"
                                  Text="{DynamicResource Username}"
                                  Foreground="Gray" 
+                                 GotFocus="ClearPlaceholderText" LostFocus="RestorePlaceholderText"
                                  FontSize="16" Style="{DynamicResource ModernTextBoxStyle}"/>
 
                         <TextBlock Text="{DynamicResource Password}" Margin="0,0,0,8" FontSize="14" Foreground="#666666"/>
                         <PasswordBox x:Name="passwordTxt" Height="45" Margin="0,0,0,30"
                                      Password="Password" 
                                      Foreground="Gray"
+                                     GotFocus="ClearPasswordPlaceholder" LostFocus="RestorePasswordPlaceholder"
                                      FontSize="16" Style="{DynamicResource ModernPasswordBoxStyle}"/>
 
                         <Button Content="{DynamicResource SignIn}" 
@@ -108,6 +110,7 @@
                                 Click="OnSignIn"
                                 FontSize="18" 
                                 FontWeight="SemiBold" 
+                               
                                 Foreground="White">
                             <Button.Background>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">

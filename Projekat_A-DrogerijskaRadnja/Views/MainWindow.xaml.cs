@@ -26,7 +26,8 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
             if (accountExists)
             {
-                if (username == "tijana.lazendic") {
+                if (username == "tijana.lazendic")
+                {
                     AdminMainWindow adminWindow = new AdminMainWindow();
                     adminWindow.Show();
                 }
@@ -43,6 +44,45 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                                 "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 usernameTxt.Clear();
                 passwordTxt.Clear();
+            }
+        }
+        private void ClearPlaceholderText(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && (textBox.Text == "Username" || textBox.Text=="Korisničko ime"))
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+
+        private void RestorePlaceholderText(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = "Username";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void ClearPasswordPlaceholder(object sender, RoutedEventArgs e)
+        {
+            PasswordBox passwordBox = sender as PasswordBox;
+            if (passwordBox != null && passwordBox.Password == "Password")
+            {
+                passwordBox.Password = string.Empty;
+                passwordBox.Foreground = Brushes.Black;
+            }
+        }
+
+        private void RestorePasswordPlaceholder(object sender, RoutedEventArgs e)
+        {
+            PasswordBox passwordBox = sender as PasswordBox;
+            if (passwordBox != null && string.IsNullOrWhiteSpace(passwordBox.Password))
+            {
+                passwordBox.Password = "Password";
+                passwordBox.Foreground = Brushes.Gray;
             }
         }
     }
