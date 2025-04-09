@@ -35,7 +35,8 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
             if (accountExists)
             {
-                if (username == "tijana.lazendic")
+                bool isDirector = accountService.IsDirector(username, password);
+                if (isDirector)
                 {
                     AdminMainWindow adminWindow = new AdminMainWindow();
                     adminWindow.Show();

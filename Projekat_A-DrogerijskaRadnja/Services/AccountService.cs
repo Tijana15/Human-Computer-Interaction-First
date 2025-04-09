@@ -90,6 +90,39 @@ namespace Projekat_A_DrogerijskaRadnja.Services
 
             return theme;
         }
+        public bool IsDirector(string username, string password)
+        {
+            int idNaloga = -1;
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT IdNaloga FROM nalog WHERE KorisnickoIme = @username AND Lozinka = @password";
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                connection.Open();
+                var result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    idNaloga = Convert.ToInt32(result);
+                }
+            }
+
+            if (idNaloga == -1)
+                return false;
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM direktor WHERE NALOG_IdNaloga = @idNaloga";
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@idNaloga", idNaloga);
+
+                connection.Open();
+                var count = Convert.ToInt32(command.ExecuteScalar());
+                return count > 0;
+            }
+        }
 
     }
 }
