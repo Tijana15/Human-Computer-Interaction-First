@@ -11,6 +11,18 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         public SettingsView()
         {
             InitializeComponent();
+            var currentTheme = Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.ToString().Contains("Theme"));
+            if (currentTheme != null)
+            {
+                string themeFile = currentTheme.Source.ToString();
+
+                if (themeFile.Contains("NightTheme"))
+                    themeComboBox.SelectedIndex = 1; 
+                else if (themeFile.Contains("LightTheme") && !themeFile.Contains("Normal"))
+                    themeComboBox.SelectedIndex = 2; 
+                else
+                    themeComboBox.SelectedIndex = 0; 
+            }
         }
 
         private void OnSaveChangesClick(object sender, RoutedEventArgs e)

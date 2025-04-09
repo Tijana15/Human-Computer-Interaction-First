@@ -53,19 +53,17 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             }
         }
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (searchBox.Text == "Search a category...")
-            {
-                searchBox.Text = "";
-                searchBox.Foreground = new SolidColorBrush(Colors.Black);
-            }
+        {          
+            searchBox.Text = "";
+            searchBox.Foreground = new SolidColorBrush(Colors.Black); 
         }
         private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(searchBox.Text))
             {
-                searchBox.Text = "Search a category...";
-                searchBox.Foreground = new SolidColorBrush(Colors.Gray); 
+                var placeholderText = (string)FindResource("SearchCategoryText");
+                searchBox.Text = placeholderText;
+                searchBox.Foreground = (Brush)FindResource("UserSideBarBackground");
             }
         }
         private void OnShowAllButton(object sender, RoutedEventArgs e)

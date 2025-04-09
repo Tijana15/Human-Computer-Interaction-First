@@ -30,7 +30,7 @@ namespace Projekat_A_DrogerijskaRadnja
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Greška pri promjeni teme: {ex.Message}");
+                
             }
         }
         public static void ChangeLanguage(string language)

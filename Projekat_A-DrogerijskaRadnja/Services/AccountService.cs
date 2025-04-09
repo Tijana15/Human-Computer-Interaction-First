@@ -2,7 +2,9 @@
 using Projekat_A_DrogerijskaRadnja.Model;
 using System.Collections.Generic;
 using System.Configuration;
+using System;
 using account = Projekat_A_DrogerijskaRadnja.Model.Account;
+using System.Windows;
 
 namespace Projekat_A_DrogerijskaRadnja.Services
 {
@@ -73,9 +75,15 @@ namespace Projekat_A_DrogerijskaRadnja.Services
 
                 using (var reader = command.ExecuteReader())
                 {
-                    if (reader.Read())
+                    try
                     {
-                        theme = reader.GetString("Tema"); 
+                        if (reader.Read())
+                        {
+                            theme = reader.GetString("Tema");
+                        }
+                    }catch(Exception ex)
+                    {
+                        
                     }
                 }
             }

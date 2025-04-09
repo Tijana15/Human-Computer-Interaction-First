@@ -171,10 +171,16 @@
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
-                                <TextBlock Text="{Binding Salary, StringFormat='💰 Salary {0}$'}"
-                                           FontSize="14" Foreground="Black" TextAlignment="Center"  Margin="0,5,0,5"/>
-                                <TextBlock Text="{Binding HireDate, StringFormat='📅 Date of hiring {0:dd.MM.yyyy}'}"  Margin="0,5,0,5"
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,5" >
+                                    <TextBlock Text="{DynamicResource Salary}" FontSize="14" Foreground="Black"/>
+                                    <TextBlock Text="{Binding Salary}"
+                                           FontSize="14" Foreground="Black" Margin="0,0,0,5"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,5">
+                                    <TextBlock Text="{DynamicResource EmployeeHireDate}" FontSize="14" Foreground="Gray" TextAlignment="Center"/>
+                                    <TextBlock Text="{Binding HireDate,StringFormat={}{0:dd.MM.yyyy}}"
                                            FontSize="14" Foreground="Gray" TextAlignment="Center"/>
+                                </StackPanel>
                                 <TextBlock Text="{Binding Shift, StringFormat='⏰ {0}'}"  Margin="0,5,0,5"
                                            FontSize="14" Foreground="DarkSlateGray" TextAlignment="Center"/>
                                 <TextBlock Text="{Binding Obligation, StringFormat='📌 {0}'}"  Margin="0,5,0,5"

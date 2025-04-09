@@ -59,19 +59,17 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (searchBox.Text == "Search a product...")
-            {
                 searchBox.Text = "";
                 searchBox.Foreground = new SolidColorBrush(Colors.Black);
-            }
         }
 
         private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(searchBox.Text))
             {
-                searchBox.Text = "Search a product...";
-                searchBox.Foreground = new SolidColorBrush(Colors.Gray);
+                var placeholderText = (string)FindResource("SearchSellingItemText");
+                searchBox.Text = placeholderText;
+                searchBox.Foreground = (Brush)FindResource("UserSideBarBackground");
             }
         }
 

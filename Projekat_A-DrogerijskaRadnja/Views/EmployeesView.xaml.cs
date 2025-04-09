@@ -57,19 +57,17 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (searchBox.Text == "Search an employee...")
-            {
-                searchBox.Text = "";
-                searchBox.Foreground = new SolidColorBrush(Colors.Black);
-            }
+            searchBox.Text = "";
+            searchBox.Foreground = new SolidColorBrush(Colors.Black);
         }
 
         private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(searchBox.Text))
             {
-                searchBox.Text = "Search an employee...";
-                searchBox.Foreground = new SolidColorBrush(Colors.Gray);
+                var placeholderText = (string)FindResource("SearchAnEmployee");
+                searchBox.Text = placeholderText;
+                searchBox.Foreground = (Brush)FindResource("SidebarBackground");
             }
         }
 
@@ -77,6 +75,10 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         {
             LoadEmployees();
             searchBox.Clear();
+            var placeholderText = (string)FindResource("SearchAnEmployee");
+            searchBox.Text = placeholderText;
+            searchBox.Foreground = (Brush)FindResource("SidebarBackground");
+
         }
 
         private void OnEmployeeDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)

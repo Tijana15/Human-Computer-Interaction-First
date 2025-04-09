@@ -1,6 +1,5 @@
 ﻿using Projekat_A_DrogerijskaRadnja.Model;
 using Projekat_A_DrogerijskaRadnja.Services;
-using System;
 using System.Windows;
 
 namespace Projekat_A_DrogerijskaRadnja.Views
@@ -20,6 +19,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void OnUpdateClick(object sender, RoutedEventArgs e)
         {
+            
             employeeService.UpdateEmployee(Employee);
             this.Close();
         }

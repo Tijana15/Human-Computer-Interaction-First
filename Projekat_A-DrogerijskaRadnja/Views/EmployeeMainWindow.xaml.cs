@@ -75,7 +75,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void OnLogoutClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Logging out...", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+           
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
