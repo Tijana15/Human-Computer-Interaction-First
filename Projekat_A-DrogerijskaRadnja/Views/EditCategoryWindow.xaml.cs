@@ -19,23 +19,23 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             category = category_;
             txtName.Text = category.Name;
             txtDescription.Text = category.Description;
-            cmbDepartments.DisplayMemberPath = "Name";
-            cmbDepartments.SelectedValuePath = "DepartmentId";
             LoadDepartments();
-            var department = cmbDepartments.Items
-                       .OfType<Department>()
-                       .FirstOrDefault(d => d.Id_Department == category.DepartmentId);
-            if (department != null)
-            {
-                cmbDepartments.Text = department.Name;
-            }
+            
         }
         private void LoadDepartments()
         {
             departments = departmentService.getDepartments();
             cmbDepartments.ItemsSource = departments;
-            cmbDepartments.Text=category.Name;
             cmbDepartments.DisplayMemberPath = "Name";
+            cmbDepartments.SelectedValue = "Id_Department"; 
+
+            var selectedDepartment = departments
+                .FirstOrDefault(d => d.Id_Department == category.DepartmentId);
+
+            if (selectedDepartment != null)
+            {
+                cmbDepartments.SelectedItem = selectedDepartment;
+            }
         }
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -53,9 +53,17 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             category.Name = txtName.Text;
             category.Description = txtDescription.Text;
             var selectedDepartment = cmbDepartments.SelectedItem as Department;
-            category.DepartmentId = selectedDepartment.Id_Department;
-            UpdateCategory(category);
-            this.Close();
+            if (selectedDepartment != null)
+            {
+                category.DepartmentId = selectedDepartment.Id_Department;
+                UpdateCategory(category);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Department of category must be selected.");
+            }
+           
         }
 
         private void DeleteCategory(int categoryId)

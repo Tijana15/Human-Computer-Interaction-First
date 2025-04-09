@@ -68,6 +68,12 @@
     <sys:String x:Key="PersonalData">Personal data</sys:String>
     <sys:String x:Key="BusinessData">Business data</sys:String>
     <sys:String x:Key="Rights">© 2025 Drogerie. All rights reserved.</sys:String>
+    <sys:String x:Key="Date">Date: </sys:String>
+    <sys:String x:Key="PayingMethod">Paying method: </sys:String>
+    <sys:String x:Key="TotalAmount">TOTAL:</sys:String>
+    <sys:String x:Key="Thanks">Thanks for shopping! 🛍️</sys:String>
+
+
 
 
 </ResourceDictionary>
