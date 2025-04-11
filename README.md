@@ -100,4 +100,4 @@ Zaposleni imaju sljedeće opcije:
 
 1. **Klonirajte repozitorijum**:
    ```bash
-   git clone https://github.com/your-repository/beauty-more.git
+   git clone https://github.com/Tijana15/Human-Computer-Interaction-First.git
