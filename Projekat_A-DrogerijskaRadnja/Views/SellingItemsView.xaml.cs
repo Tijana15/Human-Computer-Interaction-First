@@ -86,10 +86,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 var itemDetails=sellingItemService.GetSellingItemDetails(selectedItem.ProductId);
                 MessageBox.Show(itemDetails.ToString());
             }
-            else
-            {
-                MessageBox.Show("sta os");
-            }
+           
         }
     }
 }

@@ -46,7 +46,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
             public event PropertyChangedEventHandler PropertyChanged;
 
-            // Promenimo nivo pristupa sa protected na public
             public void OnPropertyChanged(string propertyName)
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -117,13 +116,9 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             BillItems = new ObservableCollection<BillItemViewModel>();
             CashRegisters = new ObservableCollection<CashRegister>();
 
-            // Postavi trenutni datum i vreme
             CurrentDateTime = DateTime.Now;
 
-            // Postavi DataContext za binding u XAML-u
             DataContext = this;
-
-            // Povezivanje listview kontrola sa kolekcijama
             listProducts.ItemsSource = AllSellingItems;
             listBillItems.ItemsSource = BillItems;
             comboCashRegister.ItemsSource = CashRegisters;
@@ -136,8 +131,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void LoadData()
         {
-            try
-            {
                 var sellingItems = sellingItemService.GetAllSellingItems();
                 AllSellingItems.Clear();
                 foreach (var item in sellingItems)
@@ -156,11 +149,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 {
                     comboCashRegister.SelectedIndex = 0;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Greška pri učitavanju podataka: {ex.Message}", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
         }
 
         private void RefreshData_Click(object sender, RoutedEventArgs e)
@@ -251,15 +239,16 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         {
             if (BillItems.Count == 0)
             {
-                MessageBox.Show("Ne možete kreirati prazan račun.", "Upozorenje", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Application.Current.Resources["WarningMessage"].ToString(), "Upozorenje", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (comboCashRegister.SelectedItem == null)
             {
-                MessageBox.Show("Morate odabrati kasu.", "Upozorenje", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Application.Current.Resources["SelectCashRegisterMessage"].ToString(), "Upozorenje", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
             try
             {
                 var selectedCashRegister = comboCashRegister.SelectedItem as CashRegister;
@@ -291,17 +280,16 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
                     itemService.AddBillItem(billItem);
                 }
-                MessageBox.Show("Račun uspešno izdat.");
+                MessageBox.Show(Application.Current.Resources["CreateBillSuccessMessage"].ToString());
                 BillItems.Clear();
                 TotalAmount = 0;
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Funkcionalnost kreiranja računa će biti implementirana naknadno.", "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(Application.Current.Resources["CreateBillInfoMessage"].ToString(), "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            }
+        }
+
 
 
         public void OnPropertyChanged(string propertyName)

@@ -19,22 +19,22 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void OnSearchButtonClick(object sender, RoutedEventArgs e)
         {
-            if(datePicker.SelectedDate.HasValue)
+            if (datePicker.SelectedDate.HasValue)
             {
                 DateTime selectedDate = datePicker.SelectedDate.Value;
                 var bills = billService.GetBillsByDate(selectedDate.ToString());
 
                 billsList.ItemsSource = bills;
-                if(bills.Count==0)
+                if (bills.Count == 0)
                 {
-                    MessageBox.Show("No bills for provided date.");
+                    MessageBox.Show(Application.Current.Resources["NoBillsForDateMessage"].ToString());
                 }
             }
             else
             {
-                MessageBox.Show("Please select the date.");
+                MessageBox.Show(Application.Current.Resources["SelectDateMessage"].ToString());
             }
-
         }
+
     }
 }

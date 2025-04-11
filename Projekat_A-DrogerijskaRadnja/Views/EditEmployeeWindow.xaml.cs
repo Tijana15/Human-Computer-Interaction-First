@@ -26,14 +26,18 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void OnDeleteClick(object sender, RoutedEventArgs e)
         {
-            var result = MessageBox.Show("Are you sure you want to delete this employee? This action cannot be undone.", "Confirm",
-                                         MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            var deleteMessage = Application.Current.Resources["DeleteEmployeeMessage"].ToString();
+            var confirmTitle = Application.Current.Resources["DeleteEmployeeConfirmTitle"].ToString();
+
+            var result = MessageBox.Show(deleteMessage, confirmTitle, MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (result == MessageBoxResult.Yes)
             {
-                 employeeService.DeleteEmployee(Employee.EmployeeId);
+                employeeService.DeleteEmployee(Employee.EmployeeId);
             }
-            this.Close ();
+
+            this.Close();
         }
+
     }
 }

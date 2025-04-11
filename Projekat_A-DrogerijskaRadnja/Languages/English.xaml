@@ -103,5 +103,17 @@
     <sys:String x:Key="DepartmentOfCategoryMissing">Choose catgory department and try again.</sys:String>
     <sys:String x:Key="YouSure">Are you sure you want to delete this category? This action cannot be undone.</sys:String>
 
+    <sys:String x:Key="WarningMessage">You cannot create an empty bill.</sys:String>
+    <sys:String x:Key="SelectCashRegisterMessage">You must select a cash register.</sys:String>
+    <sys:String x:Key="CreateBillSuccessMessage">Bill created successfully.</sys:String>
+    <sys:String x:Key="CreateBillInfoMessage">Bill creation functionality will be implemented later.</sys:String>
+    <sys:String x:Key="NoBillsForDateMessage">No bills for the selected date.</sys:String>
+    <sys:String x:Key="SelectDateMessage">Please select the date.</sys:String>
+
+    <sys:String x:Key="DeleteEmployeeMessage">Are you sure you want to delete this employee? This action cannot be undone.</sys:String>
+    <sys:String x:Key="DeleteEmployeeConfirmTitle">Confirm</sys:String>
+    <sys:String x:Key="IncorrectLoginMessage">Incorrect username or password. Try again.</sys:String>
+    <sys:String x:Key="LoginErrorTitle">Error</sys:String>
+
 
 </ResourceDictionary>

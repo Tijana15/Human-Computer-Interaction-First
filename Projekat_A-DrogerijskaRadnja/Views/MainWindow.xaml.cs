@@ -47,6 +47,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                     Application.Current.Properties["Username"] = LoggedInUsername;
                     Application.Current.Properties["Password"] = LoggedInPassword;
                     Application.Current.Properties["Theme"] = LoggedInTheme;
+                    
                     App.ChangeTheme(LoggedInTheme);
 
                 }
@@ -69,13 +70,16 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             }
             else
             {
-                MessageBox.Show("Incorrect password or username. Try again.",
-                                "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                var incorrectMessage = Application.Current.Resources["IncorrectLoginMessage"].ToString();
+                var errorTitle = Application.Current.Resources["LoginErrorTitle"].ToString();
+
+                MessageBox.Show(incorrectMessage, errorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
                 usernameTxt.Clear();
                 passwordTxt.Clear();
             }
+
         }
-        
+
         private void ClearPlaceholderText(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
