@@ -74,6 +74,30 @@
     <sys:String x:Key="Thanks">Thanks for shopping! 🛍️</sys:String>
 
 
+    <sys:String x:Key="BillingWindowTitle">Billing</sys:String>
+    <sys:String x:Key="BillingSystemTitle">Billing system</sys:String>
+    <sys:String x:Key="DateTimeLabel">Date and time:</sys:String>
+    <sys:String x:Key="IssueBillButtonText">Issue invoice</sys:String>
+    <sys:String x:Key="AvailableProductsTitle">Products available</sys:String>
+    <sys:String x:Key="ShoppingCartTitle">Shopping cart</sys:String>
+    <sys:String x:Key="AddToCartButtonText">Add</sys:String>
+    <sys:String x:Key="UnitPriceLabel">Price:</sys:String>
+    <sys:String x:Key="TotalLabel">Total:</sys:String>
+    <sys:String x:Key="CashRegisterLabel">CashRegisterId:</sys:String>
+    <sys:String x:Key="PaymentMethodLabel">Paying method:</sys:String>
+    <sys:String x:Key="CashPaymentOption">Cash</sys:String>
+    <sys:String x:Key="CardPaymentOption">Card</sys:String>
+    <sys:String x:Key="TotalAmountLabel">TOTAL:</sys:String>
+
+
+    <sys:String x:Key="EmptyCartWarning">Shopping cart is empty. Add products before issuing invoice.</sys:String>
+    <sys:String x:Key="SelectCashRegisterWarning">Please choose an cash register id.</sys:String>
+    <sys:String x:Key="BillSuccessMessage">Sucessfull!\nTotal: {0} $\nPaying method: {1}</sys:String>
+    <sys:String x:Key="BillErrorMessage">Error occured while issuing invoice.</sys:String>
+    <sys:String x:Key="WarningTitle">Warning</sys:String>
+    <sys:String x:Key="SuccessTitle">Successful</sys:String>
+    <sys:String x:Key="ErrorTitle">Error</sys:String>
+
 
 
 </ResourceDictionary>

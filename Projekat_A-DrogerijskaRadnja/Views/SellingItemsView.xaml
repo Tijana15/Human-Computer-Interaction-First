@@ -7,7 +7,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Naslov i pretraga -->
         <StackPanel Grid.Row="0" Margin="15,0,15,15">
             <TextBlock Text="{DynamicResource SellingItemsListTitle}" FontSize="20" FontWeight="Bold"
                        Foreground="{DynamicResource UserSideBarBackground}" Margin="0,0,0,15"/>
@@ -26,7 +25,6 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <!-- Polje za pretragu sa ikonom -->
                     <Border Grid.Column="0" CornerRadius="8" Background="#F7F9FC" BorderBrush="#E0E7FF" BorderThickness="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -42,7 +40,6 @@
                         </Grid>
                     </Border>
 
-                    <!-- Dugmad sa ActionButtonStyle -->
                     <Button Grid.Column="1" Content="{DynamicResource SearchSellingItemButtonText}" Click="OnSearchButton" 
                             Margin="8,0,0,0" Padding="12,10" MinWidth="90"
                             Foreground="White" Background="{DynamicResource UserSideBarBackground}" FontWeight="SemiBold" FontSize="14"
@@ -61,7 +58,6 @@
             </Border>
         </StackPanel>
 
-        <!-- Lista artikala -->
         <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="8">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <ListBox x:Name="sellingItemsList" 
@@ -78,13 +74,11 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <!-- Product ID -->
                                     <Border Grid.Column="0" Background="{DynamicResource UserSideBarBackground}" Width="40" Height="40" CornerRadius="20" VerticalAlignment="Center">
                                         <TextBlock Text="{Binding ProductId}" FontWeight="SemiBold" Foreground="White"
                                                    FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
 
-                                    <!-- Detalji artikla -->
                                     <StackPanel Grid.Column="1" Margin="15,0,0,0" VerticalAlignment="Center">
                                         <TextBlock Text="{Binding Product.Name}" FontWeight="SemiBold" FontSize="16"/>
                                         <TextBlock Text="{Binding Product.Description}" FontStyle="Italic" FontSize="14" Foreground="#707070" Margin="0,5,0,0"/>

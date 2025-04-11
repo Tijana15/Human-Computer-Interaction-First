@@ -66,7 +66,6 @@ namespace Projekat_A_DrogerijskaRadnja.Services
             {
                 string query = "SELECT Tema FROM nalog WHERE KorisnickoIme = @username AND Lozinka = @password";
 
-                // Pripremi SQL komandu
                 var command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);

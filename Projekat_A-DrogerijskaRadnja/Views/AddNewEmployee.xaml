@@ -14,7 +14,6 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- Glavni sadržaj formulara -->
                 <Border Grid.Row="0" CornerRadius="10" Background="White" Margin="20,20,20,10" Padding="25">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="15" ShadowDepth="1" Direction="270" Opacity="0.15"/>
@@ -27,7 +26,6 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" Margin="10,0,20,0">
-                            <!-- Naslov formulara -->
                             <TextBlock Text="{DynamicResource AddNewEmployeeTitle}" 
                                    FontSize="22" 
                                    FontWeight="Bold" 
@@ -35,58 +33,47 @@
                                    HorizontalAlignment="Center"
                                    Margin="0,0,0,25"/>
 
-                            <!-- Osobne informacije -->
                             <TextBlock Text="{DynamicResource PersonalInfoSection}" 
                                    FontSize="16" 
                                    FontWeight="SemiBold" 
                                    Foreground="#2D3748"
                                    Margin="0,0,0,15"/>
 
-                            <!-- Ime -->
                             <TextBlock Text="{DynamicResource EmployeeName}" Style="{DynamicResource InputLabelStyle}"/>
                             <TextBox x:Name="NameTextBox" Style="{DynamicResource InputFieldStyle}"/>
 
-                            <!-- Prezime -->
                             <TextBlock Text="{DynamicResource EmployeeLastname}" Style="{DynamicResource InputLabelStyle}"/>
                             <TextBox x:Name="LastNameTextBox" Style="{DynamicResource InputFieldStyle}"/>
 
-                            <!-- Telefon -->
                             <TextBlock Text="{DynamicResource EmployeeTelephone}" Style="{DynamicResource InputLabelStyle}"/>
                             <TextBox x:Name="TelephoneTextBox" Style="{DynamicResource InputFieldStyle}"/>
 
-                            <!-- Adresa -->
                             <TextBlock Text="{DynamicResource EmployeeAddress}" Style="{DynamicResource InputLabelStyle}"/>
                             <TextBox x:Name="AddressTextBox" Style="{DynamicResource InputFieldStyle}"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="20,0,10,0">
-                            <!-- Službene informacije -->
                             <TextBlock Text="{DynamicResource EmploymentInfoSection}" 
                                    FontSize="16" 
                                    FontWeight="SemiBold" 
                                    Foreground="#2D3748"
                                    Margin="0,85,0,15"/>
 
-                            <!-- Plata -->
                             <TextBlock Text="{DynamicResource EmployeeSalary}" Style="{DynamicResource InputLabelStyle}"/>
                             <TextBox x:Name="SalaryTextBox" Style="{DynamicResource InputFieldStyle}"/>
 
-                            <!-- Datum zaposlenja -->
                             <TextBlock Text="{DynamicResource EmployeeHireDate}" Style="{DynamicResource InputLabelStyle}"/>
                             <TextBox x:Name="HireDateTextBox" Style="{DynamicResource InputFieldStyle}"/>
 
-                            <!-- Smena -->
                             <TextBlock Text="{DynamicResource EmployeeShift}" Style="{DynamicResource InputLabelStyle}"/>
                             <TextBox x:Name="ShiftTextBox" Style="{DynamicResource InputFieldStyle}"/>
 
-                            <!-- Obaveze -->
                             <TextBlock Text="{DynamicResource EmployeeObligation}" Style="{DynamicResource InputLabelStyle}"/>
                             <TextBox x:Name="ObligationTextBox" Style="{DynamicResource InputFieldStyle}"/>
                         </StackPanel>
                     </Grid>
                 </Border>
 
-                <!-- Dugmići na dnu -->
                 <Border Grid.Row="1" Background="White" Padding="15" Margin="20,0,20,20">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="15" ShadowDepth="1" Direction="270" Opacity="0.15"/>

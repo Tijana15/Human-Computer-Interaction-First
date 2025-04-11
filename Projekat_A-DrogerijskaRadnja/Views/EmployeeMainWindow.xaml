@@ -16,7 +16,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Sidebar with improved styling -->
         <Border Background="{DynamicResource UserSideBarBackground}" 
                 BorderBrush="{DynamicResource BorderColor}" 
                 BorderThickness="0,0,1,0">
@@ -35,7 +34,6 @@
               HorizontalAlignment="Center" Margin="0,5,0,0"/>
                 </StackPanel>
 
-                <!-- Navigation Buttons -->
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,15,0,0">
                     <StackPanel>
                         <Button Content="{DynamicResource CategoriesBar}" 
@@ -81,7 +79,6 @@
                     </StackPanel>
                 </ScrollViewer>
 
-                <!-- Logout button at bottom -->
                 <Button Grid.Row="2" 
                         Content="{DynamicResource LogOut}" 
                         Click="OnLogoutClick"
@@ -94,7 +91,6 @@
             </Grid>
         </Border>
 
-        <!-- Main content area with shadow and padding -->
         <Border Grid.Column="1" 
                 Background="{DynamicResource UserMainBackground}" 
                 Padding="20">
@@ -104,7 +100,6 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Page Header -->
                 <Border Grid.Row="0" 
                         BorderThickness="0,0,0,1" 
                         BorderBrush="{DynamicResource BorderColor}" 
@@ -117,7 +112,6 @@
                                Foreground="{DynamicResource UserSideBarBackground}"/>
                 </Border>
 
-                <!-- Content Area -->
                 <Border Grid.Row="1" 
                         Background="White" 
                         CornerRadius="8"

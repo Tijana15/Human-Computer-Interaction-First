@@ -13,11 +13,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Naslov sekcije -->
         <TextBlock Grid.Row="0" Text="{DynamicResource SettingsText}" FontSize="24" FontWeight="Bold" 
                    Margin="0,0,0,20" Foreground="{DynamicResource TextOnNightMode}"/>
 
-        <!-- Glavni sadržaj u kartici sa senkom -->
         <Border Grid.Row="1" CornerRadius="12" Background="{DynamicResource CardBackground}" Padding="20" 
                 BorderBrush="{DynamicResource SidebarBackground}" BorderThickness="1">
             <Border.Effect>
@@ -25,7 +23,6 @@
             </Border.Effect>
 
             <StackPanel>
-                <!-- Tema -->
                 <Border Background="{DynamicResource ControlBackground}" CornerRadius="10" Padding="15" Margin="0,0,0,20">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -33,14 +30,12 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <!-- Naslov sekcije za temu -->
                         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
                             <TextBlock Text="🎨" FontSize="18" Margin="0,0,10,0"/>
                             <TextBlock Text="{DynamicResource ChangeThemeText}" Foreground="{DynamicResource TextOnNightMode}" 
                                        FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
                         </StackPanel>
 
-                        <!-- Dropdown za temu -->
                         <ComboBox Grid.Row="1" x:Name="themeComboBox" Height="40" 
                                   BorderThickness="1" BorderBrush="{DynamicResource SidebarBackground}" 
                                   Background="White" Padding="10,5">
@@ -53,7 +48,6 @@
 
                
 
-                <!-- Dugme za čuvanje -->
                 <Button Content="{DynamicResource SaveChangesText}" Click="OnSaveChangesClick"
                         Background="{DynamicResource SidebarBackground}" Foreground="White" 
                         FontSize="16" FontWeight="SemiBold" BorderThickness="0"

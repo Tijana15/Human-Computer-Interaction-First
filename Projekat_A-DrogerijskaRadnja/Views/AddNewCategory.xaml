@@ -23,7 +23,6 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <!-- Header -->
             <TextBlock Grid.Row="0" 
                       Text="{DynamicResource AddNewCategory}" 
                       FontSize="22" 
@@ -32,15 +31,12 @@
                       Margin="0,0,0,20"
                       HorizontalAlignment="Center"/>
 
-            <!-- Form Fields -->
             <StackPanel Grid.Row="0">
-                <!-- Category Name -->
                 <TextBlock Text="{DynamicResource CategoryName}" 
                          Style="{DynamicResource LabelStyle}"/>
                 <TextBox x:Name="txtName" 
                        Style="{DynamicResource InputFieldStyle}"/>
 
-                <!-- Category Description -->
                 <TextBlock Text="{DynamicResource CategoryDescription}" 
                          Style="{DynamicResource LabelStyle}"/>
                 <TextBox x:Name="txtDescription" 
@@ -51,14 +47,12 @@
                        VerticalContentAlignment="Top"
                        Padding="10"/>
 
-                <!-- Category Department -->
                 <TextBlock Text="{DynamicResource CategoryDepartment}" 
                          Style="{DynamicResource LabelStyle}"/>
                 <ComboBox x:Name="cmbDepartments" 
                         Style="{DynamicResource ComboBoxStyle}"/>
             </StackPanel>
 
-            <!-- Button Panel -->
             <Grid Grid.Row="1" Margin="0,15,0,0">
                 <StackPanel Orientation="Horizontal" 
                           HorizontalAlignment="Right">

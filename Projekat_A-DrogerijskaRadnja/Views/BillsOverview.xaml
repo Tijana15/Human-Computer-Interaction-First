@@ -13,7 +13,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Filter Panel -->
         <Border Grid.Row="0" Background="{DynamicResource UserSideBarBackground}" CornerRadius="5" Padding="10">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <DatePicker x:Name="datePicker"
@@ -39,11 +38,10 @@
                         BorderThickness="0"
                         
                         Click="OnSearchButtonClick"
-                        Margin="5,0,0,0"/>
+                        Margin="5,0,0,0" Style="{DynamicResource ActionButtonStyle}"/>
             </StackPanel>
         </Border>
 
-        <!-- Bills List -->
         <ScrollViewer Grid.Row="1" Margin="0,15,0,0" VerticalScrollBarVisibility="Visible">
             <ItemsControl x:Name="billsList">
                 <ItemsControl.ItemsPanel>

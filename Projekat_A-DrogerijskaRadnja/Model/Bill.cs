@@ -4,7 +4,7 @@ namespace Projekat_A_DrogerijskaRadnja.Model
 {
     public class Bill
     {
-         public int BillId { get;set; }
+        public int BillId { get;set; }
         public DateTime DateTime { get; set; }
         public String PayingMethod { get; set; }
         public double Price { get; set; }

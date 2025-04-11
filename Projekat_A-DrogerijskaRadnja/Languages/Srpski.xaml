@@ -74,7 +74,30 @@
     <sys:String x:Key="TotalAmount">UKUPNO:</sys:String>
     <sys:String x:Key="Thanks">Hvala na kupovini! 🛍️</sys:String>
 
+    
+    <sys:String x:Key="BillingWindowTitle">Izdavanje računa</sys:String>
+    <sys:String x:Key="BillingSystemTitle">Izdavanje računa</sys:String>
+    <sys:String x:Key="DateTimeLabel">Datum i vrijeme:</sys:String>
+    <sys:String x:Key="IssueBillButtonText">Izdaj račun</sys:String>
+    <sys:String x:Key="AvailableProductsTitle">Dostupni proizvodi</sys:String>
+    <sys:String x:Key="ShoppingCartTitle">Korpa</sys:String>
+    <sys:String x:Key="AddToCartButtonText">Dodaj</sys:String>
+        <sys:String x:Key="UnitPriceLabel">Cijena:</sys:String>
+        <sys:String x:Key="TotalLabel">Ukupno:</sys:String>
+        <sys:String x:Key="CashRegisterLabel">Kasa:</sys:String>
+        <sys:String x:Key="PaymentMethodLabel">Način plaćanja:</sys:String>
+        <sys:String x:Key="CashPaymentOption">Keš</sys:String>
+        <sys:String x:Key="CardPaymentOption">Kartica</sys:String>
+        <sys:String x:Key="TotalAmountLabel">UKUPAN IZNOS:</sys:String>
 
+    
+    <sys:String x:Key="EmptyCartWarning">Korpa je prazna. Dodajte proizvode prije izdavanja računa.</sys:String>
+    <sys:String x:Key="SelectCashRegisterWarning">Molimo izaberite kasu.</sys:String>
+    <sys:String x:Key="BillSuccessMessage">Račun je uspješno izdat!\nUkupan iznos: {0} KM\nNačin plaćanja: {1}</sys:String>
+    <sys:String x:Key="BillErrorMessage">Greška prilikom izdavanja računa</sys:String>
+    <sys:String x:Key="WarningTitle">Upozorenje</sys:String>
+    <sys:String x:Key="SuccessTitle">Uspješno</sys:String>
+    <sys:String x:Key="ErrorTitle">Greška</sys:String>
 
 
 

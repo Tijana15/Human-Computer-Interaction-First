@@ -51,7 +51,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             if (sender != activeButton) 
             {
                 SetActiveButton(sender as Button);
-                //contentArea.Content = new EmployeesView();
+                contentArea.Content = new Billing();
             }
         }
 

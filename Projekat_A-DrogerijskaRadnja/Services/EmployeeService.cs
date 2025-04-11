@@ -81,7 +81,6 @@ namespace Projekat_A_DrogerijskaRadnja.Services
             command.ExecuteNonQuery();
         }
 
-        // UPDATE EMPLOYEE
         public void UpdateEmployee(Employee employee)
         {
             using var connection = new MySqlConnection(connectionString);

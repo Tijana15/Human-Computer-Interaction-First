@@ -13,7 +13,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Sidebar -->
         <Border Grid.Column="0" Background="{DynamicResource SidebarBackground}">
             <Grid>
                 <Grid.RowDefinitions>
@@ -22,7 +21,6 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- Logo i naziv aplikacije -->
                 <StackPanel Grid.Row="0" Margin="20,30,20,40">
                     <TextBlock Text="🧼" FontSize="36" Foreground="White" HorizontalAlignment="Center"/>
                     <TextBlock Text="Beauty &amp; more" FontSize="20" FontWeight="Bold" Foreground="White" 
@@ -31,7 +29,6 @@
                               HorizontalAlignment="Center" Margin="0,5,0,0"/>
                 </StackPanel>
 
-                <!-- Glavni meni -->
                 <StackPanel Grid.Row="1" Margin="0,20,0,0">
                     <Button x:Name="employeesButton" Content="{DynamicResource EmployeesBar}" Click="OnEmployeesClick"
                            Style="{StaticResource SidebarButtonStyle}">
@@ -58,7 +55,6 @@
                     </Button>
                 </StackPanel>
 
-                <!-- Donji deo za odjavu -->
                 <StackPanel Grid.Row="2" Margin="0,0,0,20">
                     <Separator Margin="15,0" Opacity="0.3"/>
                     <Button Content="{DynamicResource LogOut}" Click="OnLogoutClick"
@@ -76,9 +72,7 @@
             </Grid>
         </Border>
 
-        <!-- Glavni sadržaj (desna strana) -->
         <Grid Grid.Column="1" Background="{DynamicResource MainContentBackground}">
-            <!-- Gornja traka sa senkom -->
             <Border Height="60" VerticalAlignment="Top" Background="White" 
                    BorderThickness="0,0,0,1" BorderBrush="#E0E7FF">
                 <Border.Effect>

@@ -13,7 +13,6 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- Glavni sadržaj formulara -->
                 <Border Grid.Row="0" CornerRadius="10" Background="White" Margin="20,20,20,10" Padding="25">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="15" ShadowDepth="1" Direction="270" Opacity="0.15"/>
@@ -25,8 +24,6 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <!-- Lijevi stupac -->
-                        <!-- Lijevi stupac - ispravljena verzija -->
                         <Grid Grid.Column="0" Margin="10,0,20,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -40,7 +37,6 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <!-- Naslov -->
                             <TextBlock Text="{DynamicResource PersonalData}" 
                Grid.Row="0" 
                Grid.ColumnSpan="2"
@@ -49,7 +45,6 @@
                Foreground="{DynamicResource ButtonColor}" 
                Margin="0,0,0,20"/>
 
-                            <!-- Ime -->
                             <TextBlock Text="{DynamicResource EmployeeName}" 
                Style="{StaticResource InputLabelStyle}" 
                Grid.Row="1" 
@@ -59,7 +54,6 @@
              Grid.Row="1" 
              Grid.Column="1"/>
 
-                            <!-- Prezime -->
                             <TextBlock Text="{DynamicResource EmployeeLastname}" 
                Style="{StaticResource InputLabelStyle}" 
                Grid.Row="2" 
@@ -69,7 +63,6 @@
              Grid.Row="2" 
              Grid.Column="1"/>
 
-                            <!-- Telefon -->
                             <TextBlock Text="{DynamicResource EmployeeTelephone}" 
                Style="{StaticResource InputLabelStyle}" 
                Grid.Row="3" 
@@ -80,7 +73,6 @@
              Grid.Column="1" 
              x:Name="TelephoneTextBox"/>
 
-                            <!-- Adresa -->
                             <TextBlock Text="{DynamicResource EmployeeAddress}" 
                Style="{StaticResource InputLabelStyle}" 
                Grid.Row="4" 
@@ -92,7 +84,6 @@
              x:Name="AddressTextBox"/>
                         </Grid>
 
-                        <!-- Desni stupac -->
                         <Grid Grid.Column="1" Margin="20,0,10,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -106,7 +97,6 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <!-- Naslov -->
                             <TextBlock Text="{DynamicResource BusinessData}" 
                                        Grid.Row="0" 
                                        Grid.ColumnSpan="2"
@@ -115,7 +105,6 @@
                                        Foreground="{DynamicResource ButtonColor}" 
                                        Margin="0,0,0,20"/>
 
-                            <!-- Plata -->
                             <TextBlock Text="{DynamicResource EmployeeSalary}" 
                                        Style="{StaticResource InputLabelStyle}" 
                                        Grid.Row="1" 
@@ -125,7 +114,6 @@
                                      Grid.Row="1" 
                                      Grid.Column="1"/>
 
-                            <!-- Datum zaposlenja -->
                             <TextBlock Text="{DynamicResource EmployeeHireDate}" 
                                        Style="{StaticResource InputLabelStyle}" 
                                        Grid.Row="2" 
@@ -135,7 +123,6 @@
                                      Grid.Row="2" 
                                      Grid.Column="1"/>
 
-                            <!-- Smena -->
                             <TextBlock Text="{DynamicResource EmployeeShift}" 
                                        Style="{StaticResource InputLabelStyle}" 
                                        Grid.Row="3" 
@@ -145,7 +132,6 @@
                                      Grid.Row="3" 
                                      Grid.Column="1"/>
 
-                            <!-- Obaveze -->
                             <TextBlock Text="{DynamicResource EmployeeObligation}" 
                                        Style="{StaticResource InputLabelStyle}" 
                                        Grid.Row="4" 
@@ -158,7 +144,6 @@
                     </Grid>
                 </Border>
 
-                <!-- Dugmići na dnu -->
                 <Border Grid.Row="1" Background="White" Padding="15" Margin="20,0,20,20">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="15" ShadowDepth="1" Direction="270" Opacity="0.15"/>

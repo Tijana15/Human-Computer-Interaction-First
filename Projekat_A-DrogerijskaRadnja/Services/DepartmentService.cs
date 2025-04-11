@@ -50,7 +50,6 @@ namespace Projekat_A_DrogerijskaRadnja.Services
 
                 using (var command = new MySqlCommand(query, connection))
                 {
-                    // Dodaj parametre
                     command.Parameters.AddWithValue("@Name", department.Name);
 
                     connection.Open();

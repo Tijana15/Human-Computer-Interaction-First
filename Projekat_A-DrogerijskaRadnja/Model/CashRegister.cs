@@ -8,8 +8,9 @@ using System.Windows.Documents;
 
 namespace Projekat_A_DrogerijskaRadnja.Model
 {
-    class CashRegister
+    public class CashRegister
     {
-        private int IdKasa { get; set; }
+        public CashRegister() { }
+        public int CashRegisterId { get; set; }
     }
 }

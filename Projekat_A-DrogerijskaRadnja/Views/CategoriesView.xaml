@@ -6,12 +6,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!-- Naslov sekcije -->
         <StackPanel Grid.Row="0" Margin="15,0,15,15">
             <TextBlock Text="{DynamicResource CategoriesListTitle}" FontSize="20" FontWeight="Bold"
                Foreground="{DynamicResource UserSideBarBackground}" Margin="0,0,0,15"/>
 
-            <!-- Search panel sa senkom i zaobljenim ivicama -->
             <Border CornerRadius="10" Background="White" Padding="10" Margin="-15,-15,0,10"
             BorderBrush="{DynamicResource UserSideBarBackground}" BorderThickness="1">
                 <Border.Effect>
@@ -26,7 +24,6 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <!-- Polje za pretragu sa ikonom -->
                     <Border Grid.Column="0" CornerRadius="8" Background="#F7F9FC" BorderBrush="#E0E7FF" BorderThickness="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -42,7 +39,6 @@
                         </Grid>
                     </Border>
 
-                    <!-- Dugme za pretragu -->
                     <Button Grid.Column="1" Content="{DynamicResource SearchCategoryButtonText}" Click="OnSearchButton" 
                     Margin="8,0,0,0" Padding="12,10" MinWidth="90" 
                     Foreground="White" Background="{DynamicResource UserSideBarBackground}" FontWeight="SemiBold" FontSize="14"
@@ -50,7 +46,6 @@
                         
                     </Button>
 
-                    <!-- Dodavanje nove kategorije -->
                     <Button Grid.Column="2" Content="{DynamicResource AddCategoryButtonText}" Click="OnAddCategoryClick" 
                     Margin="8,0,0,0" Padding="12,10" MinWidth="90"
                     Foreground="White" Background="{DynamicResource UserSideBarBackground}" FontWeight="SemiBold" FontSize="14"
@@ -58,7 +53,6 @@
                       
                     </Button>
 
-                    <!-- Prikaz svih -->
                     <Button Grid.Column="3" Content="{DynamicResource ShowAllCategories}" Click="OnShowAllButton" 
                     Margin="8,0,0,0" Padding="12,10" MinWidth="90"
                     Foreground="White" Background="{DynamicResource UserSideBarBackground}" FontWeight="SemiBold" FontSize="14"
@@ -68,7 +62,6 @@
                 </Grid>
             </Border>
         </StackPanel>
-        <!-- Lista kategorija -->
         <Border Grid.Row="1" 
                 Background="White" 
                 BorderBrush="#E0E0E0" 
@@ -96,7 +89,6 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <!-- Category ID -->
                                     <Border Grid.Column="0" 
                                             Background="{DynamicResource UserSideBarBackground}" 
                                             Width="40" 
@@ -111,7 +103,6 @@
                                                    HorizontalAlignment="Center"/>
                                     </Border>
 
-                                    <!-- Category Details -->
                                     <StackPanel Grid.Column="1" 
                                                 Margin="15,0,0,0" 
                                                 VerticalAlignment="Center">

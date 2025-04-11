@@ -7,13 +7,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Search and add button -->
         <StackPanel Grid.Row="0" Margin="15,0,15,15">
-    <!-- Naslov sekcije -->
     <TextBlock Text="{DynamicResource EmployeesListTitle}" FontSize="20" FontWeight="Bold" 
                Foreground="{DynamicResource SidebarBackground}" Margin="5,0,0,15"/>
     
-    <!-- Search panel sa senkom i zaobljenim ivicama -->
     <Border CornerRadius="10" Background="White" Padding="10" Margin="0,0,0,10"
             BorderBrush="{DynamicResource SidebarBackground}" BorderThickness="1">
         <Border.Effect>
@@ -28,7 +25,6 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             
-            <!-- Polje za pretragu sa ikonom -->
             <Border Grid.Column="0" CornerRadius="8" Background="#F7F9FC" BorderBrush="#E0E7FF" BorderThickness="1">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -44,7 +40,6 @@
                 </Grid>
             </Border>
             
-            <!-- Dugmići sa efektima pri prelasku -->
             <Button Grid.Column="1" Content="{DynamicResource SearchButton}" Click="OnSearchButton" 
                     Margin="8,0,0,0" Padding="12,10" MinWidth="90" 
                     Foreground="White" Background="{DynamicResource SidebarBackground}" FontWeight="SemiBold" FontSize="14"
@@ -150,7 +145,6 @@
                                 Background="White" Padding="10" Margin="10" Width="220" Height="280">
                             <StackPanel HorizontalAlignment="Center">
 
-                                <!-- Ikonica korisnika -->
                                 <Ellipse Width="80" Height="80" Stroke="{DynamicResource SidebarBackground}" StrokeThickness="2"
                                          HorizontalAlignment="Center" Margin="0,0,0,10">
                                     <Ellipse.Fill>
@@ -162,7 +156,6 @@
                                     </Ellipse.Fill>
                                 </Ellipse>
 
-                                <!-- Podaci o zaposlenom -->
                                 <TextBlock FontWeight="Bold" FontSize="16" Foreground="{DynamicResource SidebarBackground}" TextAlignment="Center" HorizontalAlignment="Center">
                                     <TextBlock.Text>
                                         <MultiBinding StringFormat="{}{0} {1}">
