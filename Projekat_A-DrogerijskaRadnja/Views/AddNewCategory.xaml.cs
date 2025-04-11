@@ -32,7 +32,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             {
                 var selectedDepartment = cmbDepartments.SelectedItem as Department;
                 int departmentId = selectedDepartment.Id_Department;
-
+                
                 var newCategory = new Category
                 {
                     Name = txtName.Text,
@@ -56,18 +56,20 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         {
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("Name of catgory is neccesary. Fill in and try again.");
+                string message = TryFindResource("NameOfCategoryMissing") as string;
+                MessageBox.Show(message);
                 return false;
             }
             if (string.IsNullOrWhiteSpace(txtDescription.Text))
             {
-                MessageBox.Show("Description of catgory is neccesary. Fill in and try again.");
+                string message = TryFindResource("DescriptionOfCategoryMissing") as string;
+                MessageBox.Show(message);
                 return false;
             }
             if (string.IsNullOrEmpty(cmbDepartments.Text))
             {
-                MessageBox.Show("Choose catgory department and try again.");
-                return false;
+                string message = TryFindResource("DepartmentOfCategoryMissing") as string;
+                MessageBox.Show(message);
             }
 
             return true;

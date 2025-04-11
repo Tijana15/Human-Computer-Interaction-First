@@ -99,7 +99,11 @@
     <sys:String x:Key="SuccessTitle">Uspješno</sys:String>
     <sys:String x:Key="ErrorTitle">Greška</sys:String>
 
-
+    <sys:String x:Key="NameOfCategoryMissing">Unesite ime kategorije i pokušajte ponovo.</sys:String>
+    <sys:String x:Key="DescriptionOfCategoryMissing">Unesite opis kategorije i pokušajte ponovo.</sys:String>
+    <sys:String x:Key="DepartmentOfCategoryMissing">Izaberite odjel kategorije i pokišajte ponovo.</sys:String>
+    <sys:String x:Key="YouSure">Da li ste sigurni da želite da izbrišete ovu kategoriju? Ova akcija se ne može poništiti.</sys:String>
+    
 
 
 </ResourceDictionary>

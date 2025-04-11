@@ -47,8 +47,6 @@ namespace Projekat_A_DrogerijskaRadnja.Services
 
         public bool AddEmployee(Employee employee)
         {
-            try
-            {
                 using var connection = new MySqlConnection(connectionString);
                 const string query = @"INSERT INTO zaposleni (Ime, Prezime, Telefon, Adresa, Smjena, Zaduženje, Plata, DatumZaposlenja) 
                                    VALUES (@Ime, @Prezime, @Telefon, @Adresa, @Smjena, @Zaduženje, @Plata, @DatumZaposlenja)";
@@ -64,11 +62,7 @@ namespace Projekat_A_DrogerijskaRadnja.Services
                 connection.Open();
                 command.ExecuteNonQuery();
                 return true;
-            }catch(System.Exception e)
-            {
-
-                return false;
-            }
+            
         }
 
         public void DeleteEmployee(int employeeId)

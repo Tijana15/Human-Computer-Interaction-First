@@ -39,8 +39,9 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         }
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            var result = MessageBox.Show("Are you sure you want to delete this category? This action cannot be undone.",
-                                        "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                
+            var result = MessageBox.Show(TryFindResource("YouSure") as string,
+                                        "", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (result == MessageBoxResult.Yes)
             {
                 DeleteCategory(category.CategoryId);
@@ -61,7 +62,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             }
             else
             {
-                MessageBox.Show("Department of category must be selected.");
+                MessageBox.Show(TryFindResource("DepartmentOfCategoryMissing") as string);
             }
            
         }

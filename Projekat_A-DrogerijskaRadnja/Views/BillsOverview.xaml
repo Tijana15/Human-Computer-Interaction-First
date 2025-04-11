@@ -93,12 +93,12 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{DynamicResource TotalAmount}"
                                FontSize="14"/>
-                                    <TextBlock Text="{Binding Price}"
+                                    <TextBlock Text="{Binding Price, StringFormat={}{0:F2}}"
                                FontWeight="Bold"
-                               FontSize="16"
+                               FontSize="14"
                                Foreground="{DynamicResource UserUpdateButton}"
                                TextAlignment="Center"
-                               Margin="5,0,0,0"/>
+                               />
                                 </StackPanel>
 
                                 <TextBlock Text="{DynamicResource Thanks}"

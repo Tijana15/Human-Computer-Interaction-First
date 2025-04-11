@@ -67,7 +67,7 @@
                 BorderBrush="#E0E0E0" 
                 BorderThickness="1" 
                 CornerRadius="8">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            
                 <ListBox x:Name="categoriesList" 
                          MouseDoubleClick="OnCategoryDoubleClick"
                          Background="Transparent" 
@@ -121,7 +121,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-            </ScrollViewer>
+           
         </Border>
     </Grid>
 </UserControl>

@@ -59,7 +59,7 @@
         </StackPanel>
 
         <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="8">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+           
                 <ListBox x:Name="sellingItemsList" 
                          MouseDoubleClick="SellingItemsList_MouseDoubleClick"
                          Background="Transparent" 
@@ -96,7 +96,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-            </ScrollViewer>
+           
         </Border>
     </Grid>
 </UserControl>
