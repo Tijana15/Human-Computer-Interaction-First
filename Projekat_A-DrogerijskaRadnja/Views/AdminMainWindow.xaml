@@ -31,7 +31,7 @@
 
                 <StackPanel Grid.Row="1" Margin="0,20,0,0">
                     <Button x:Name="employeesButton" Content="{DynamicResource EmployeesBar}" Click="OnEmployeesClick"
-                           Style="{StaticResource SidebarButtonStyle}">
+                           Style="{DynamicResource SidebarButtonStyle}">
                         <Button.ContentTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -43,7 +43,7 @@
                     </Button>
 
                     <Button x:Name="settingsButton" Content="{DynamicResource SettingsBar}" Click="OnSettingsClick"
-                           Style="{StaticResource SidebarButtonStyle}">
+                           Style="{DynamicResource SidebarButtonStyle}">
                         <Button.ContentTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -58,7 +58,7 @@
                 <StackPanel Grid.Row="2" Margin="0,0,0,20">
                     <Separator Margin="15,0" Opacity="0.3"/>
                     <Button Content="{DynamicResource LogOut}" Click="OnLogoutClick"
-                           Style="{StaticResource SidebarButtonStyle}">
+                           Style="{DynamicResource SidebarButtonStyle}">
                         <Button.ContentTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">

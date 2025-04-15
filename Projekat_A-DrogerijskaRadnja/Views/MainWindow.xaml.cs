@@ -14,6 +14,7 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         public string LoggedInUsername { get; set; }
         public string LoggedInPassword { get; set; }
         public string LoggedInTheme { get; set; }
+        public string LoggedInLanguage { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -47,7 +48,14 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                     Application.Current.Properties["Username"] = LoggedInUsername;
                     Application.Current.Properties["Password"] = LoggedInPassword;
                     Application.Current.Properties["Theme"] = LoggedInTheme;
-                    
+                    var language=accountService.GetUserLanguage(username, password);
+                    this.LoggedInLanguage = language;
+                    if (LoggedInLanguage!= string.Empty)
+                    {
+                        Application.Current.Properties["Language"] = LoggedInLanguage;
+                        App.ChangeLanguage(LoggedInLanguage);
+
+                    }
                     App.ChangeTheme(LoggedInTheme);
 
                 }
@@ -63,8 +71,18 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                     Application.Current.Properties["Password"] = LoggedInPassword;
                     Application.Current.Properties["Theme"] = LoggedInTheme;
                     App.ChangeTheme(LoggedInTheme);
+                    var language = accountService.GetUserLanguage(username, password);
+                    this.LoggedInLanguage = language;
+                    if (LoggedInLanguage != string.Empty)
+                    {
+                        Application.Current.Properties["Language"] = LoggedInLanguage;
+                        App.ChangeLanguage(LoggedInLanguage);
+
+                    }
+                    App.ChangeTheme(LoggedInTheme);
+
                 }
-                
+
 
                 this.Close();
             }

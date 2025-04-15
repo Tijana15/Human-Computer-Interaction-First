@@ -5,6 +5,7 @@ using System.Configuration;
 using System;
 using account = Projekat_A_DrogerijskaRadnja.Model.Account;
 using System.Windows;
+using System.Data;
 
 namespace Projekat_A_DrogerijskaRadnja.Services
 {
@@ -19,8 +20,8 @@ namespace Projekat_A_DrogerijskaRadnja.Services
         {
             var accounts = new List<account>();
             using (var connection = new MySqlConnection(connectionString))
-            {
-                var query = "SELECT KorisnickoIme, Lozinka, IdNaloga FROM nalog";
+            {  
+                var query = "SELECT KorisnickoIme, Lozinka, IdNaloga, jezik FROM nalog";
 
                 var command = new MySqlCommand(query, connection);
                 connection.Open();
@@ -29,12 +30,14 @@ namespace Projekat_A_DrogerijskaRadnja.Services
                 {
                     while (reader.Read())
                     {
+                        string jezikValue = reader.IsDBNull("jezik") ? null : reader.GetString("jezik");
                         accounts.Add(new Account
                         {
                             KorisnickoIme = reader.GetString("KorisnickoIme"),
                             Lozinka = reader.GetString("Lozinka"),
                             IdNaloga = reader.GetInt32("IdNaloga"),
-                           
+                            Jezik = jezikValue,
+
                         });
                     }
                  
@@ -51,6 +54,21 @@ namespace Projekat_A_DrogerijskaRadnja.Services
                 var command = new MySqlCommand(query, connection);
 
                 command.Parameters.AddWithValue("@tema", theme);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateLanguageForUser(string username, string password, string language)
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                var query = "UPDATE nalog SET jezik = @jezik WHERE KorisnickoIme = @username AND Lozinka = @password";
+                var command = new MySqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@jezik", language);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);
 
@@ -88,6 +106,38 @@ namespace Projekat_A_DrogerijskaRadnja.Services
             }
 
             return theme;
+        }
+        public string GetUserLanguage(string username, string password)
+        {
+            string language = string.Empty;
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT jezik FROM nalog WHERE KorisnickoIme = @username AND Lozinka = @password";
+
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    try
+                    {
+                        if (reader.Read())
+                        {
+                            language = reader.GetString("jezik");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
+
+            return language;
         }
         public bool IsDirector(string username, string password)
         {

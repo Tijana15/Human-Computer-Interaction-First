@@ -23,6 +23,17 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 else
                     themeComboBox.SelectedIndex = 0; 
             }
+            var currentLanguage = Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.ToString().Contains("Language"));
+            if (currentLanguage != null)
+            {
+                string languageFile = currentLanguage.Source.ToString();
+
+                if (languageFile.Contains("English"))
+                    languageComboBox.SelectedIndex = 1;
+                else if (languageFile.Contains("Srpski"))
+                    languageComboBox.SelectedIndex = 0;
+                
+            }
         }
 
         private void OnSaveChangesClick(object sender, RoutedEventArgs e)
@@ -61,6 +72,28 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 var service = new AccountService();
                 service.UpdateThemeForUser(username, password, themeName);
             }
+
+            string selectedLanguage = "";
+            if (languageComboBox.SelectedItem is ComboBoxItem selectedLanguageItem)
+            {
+                selectedLanguage = selectedLanguageItem.Content.ToString();
+            }
+            ResourceDictionary currentLanguage = Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.ToString().Contains("Languages"));
+            if (currentLanguage != null)
+            {
+                Application.Current.Resources.MergedDictionaries.Remove(currentLanguage);
+            }
+            ResourceDictionary newLanguage = new ResourceDictionary { Source = new Uri($"/Languages/{selectedLanguage}.xaml", UriKind.Relative) };
+            Application.Current.Resources.MergedDictionaries.Add(newLanguage);
+
+
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
+            {
+                var service = new AccountService();
+                service.UpdateThemeForUser(username, password, themeName);
+                service.UpdateLanguageForUser(username, password, selectedLanguage); 
+            }
+
         }
 
     }

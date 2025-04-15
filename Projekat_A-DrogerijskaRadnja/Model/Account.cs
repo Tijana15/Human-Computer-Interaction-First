@@ -8,5 +8,7 @@ namespace Projekat_A_DrogerijskaRadnja.Model
          public int IdNaloga { get; set; }
          public string KorisnickoIme { get; set; }
          public string Lozinka { get; set; }
+
+        public string Jezik { get; set; }
     }
 }

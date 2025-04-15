@@ -28,6 +28,8 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
@@ -42,6 +44,19 @@
                             <ComboBoxItem Content="Normal"/>
                             <ComboBoxItem Content="Dark"/>
                             <ComboBoxItem Content="Light"/>
+                        </ComboBox>
+
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,20,0,10">
+                            <TextBlock Text="🌐" FontSize="18" Margin="0,0,10,0"/>
+                            <TextBlock Text="{DynamicResource ChangeLanguageText}" Foreground="{DynamicResource TextOnNightMode}"
+               FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <ComboBox Grid.Row="3" x:Name="languageComboBox" Height="40"
+          BorderThickness="1" BorderBrush="{DynamicResource SidebarBackground}"
+          Background="White" Padding="10,5">
+                            <ComboBoxItem Content="Srpski"/>
+                            <ComboBoxItem Content="English"/>
                         </ComboBox>
                     </Grid>
                 </Border>

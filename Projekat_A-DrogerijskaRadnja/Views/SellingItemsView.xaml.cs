@@ -1,5 +1,6 @@
 ﻿using Projekat_A_DrogerijskaRadnja.Model;
 using Projekat_A_DrogerijskaRadnja.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -40,9 +41,9 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             {
                 
                 var filteredItems = sellingItems.Where(s =>
-                    s.Product.Name.ToLower().Contains(searchText) ||
-                    s.Product.Description.ToLower().Contains(searchText) ||
-                    s.Product.Brand.ToLower().Contains(searchText))
+                    s.Product.Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                    s.Product.Description.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                    s.Product.Brand.Contains(searchText, StringComparison.OrdinalIgnoreCase))
                     .ToList();
 
                 if (filteredItems.Any())
