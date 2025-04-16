@@ -204,7 +204,7 @@ CREATE TABLE `kategorija` (
 
 LOCK TABLES `kategorija` WRITE;
 /*!40000 ALTER TABLE `kategorija` DISABLE KEYS */;
-INSERT INTO `kategorija` VALUES ('Kreme za lice','Kreme za hidrataciju i njegu lica',1,7),('Šamponi','Šamponi za sve tipove kose uključujući masnu i suvu',2,8),('Puderi','Tekući i kompaktni puderi',3,6),('Ruž za usne','Različite nijanse ruževa za usne',4,6),('Parfemi za žene','Razni parfemi za žene',5,5),('Parfemi za muškarce','Razni parfemi za muškarce',6,5),('Lakovi za nokte','Različite boje i vrste lakova za nokte',7,9),('Losioni za tijelo','Losioni za hidrataciju i njegu tijela',8,10),('Zubne paste','Razne vrste zubnih pasti',9,2),('Vitamini','Dodaci prehrani i vitamini',10,3);
+INSERT INTO `kategorija` VALUES ('Kreme za lice','Kreme za hidrataciju i njegu lica',1,7),('Šamponi','Šamponi za sve tipove kose uključujući masnu i suvu',2,8),('Puderi','Tekući i kompaktni puderi',3,6),('Ruž za usne','Različite nijanse ruževa za usne',4,6),('Parfemi za žene','Razni parfemi za žene',5,5),('Parfemi za muškarce','Razni parfemi za muškarce',6,5),('Lakovi za nokte','Različite boje i vrste lakova za nokte',7,9),('Losioni za tijelo','Losioni za hidrataciju i njegu tijela',8,10),('Zubne paste','Razne vrste zubnih pasti',9,4),('Vitamini','Dodaci prehrani i vitamini',10,3);
 /*!40000 ALTER TABLE `kategorija` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,6 +250,7 @@ CREATE TABLE `nalog` (
   `Lozinka` varchar(45) NOT NULL,
   `IdNaloga` int NOT NULL,
   `Tema` varchar(45) DEFAULT NULL,
+  `jezik` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`IdNaloga`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -260,7 +261,7 @@ CREATE TABLE `nalog` (
 
 LOCK TABLES `nalog` WRITE;
 /*!40000 ALTER TABLE `nalog` DISABLE KEYS */;
-INSERT INTO `nalog` VALUES ('jovan.jovanovic','jovan123',1,NULL),('milica.petrovic','milica123',2,NULL),('stefan.djordjevic','stefan123',3,'NightTheme'),('ana.markovic','ana123',4,NULL),('nikola.nikolic','nikola123',5,'NormalLightTheme'),('jovana.stojanovic','jovana123',6,NULL),('filip.ilic','filip123',7,'NightTheme'),('mila.pavlovic','mila123',8,NULL),('marko.stankovic','marko123',9,NULL),('jelena.simic','jelena123',10,NULL),('tijana.lazendic','tijana123',11,'NightTheme');
+INSERT INTO `nalog` VALUES ('jovan.jovanovic','jovan123',1,'LightTheme','Srpski'),('milica.petrovic','milica123',2,NULL,NULL),('stefan.djordjevic','stefan123',3,'NightTheme',NULL),('ana.markovic','ana123',4,NULL,NULL),('nikola.nikolic','nikola123',5,'NormalLightTheme',NULL),('jovana.stojanovic','jovana123',6,NULL,NULL),('filip.ilic','filip123',7,'NightTheme','Srpski'),('mila.pavlovic','mila123',8,NULL,NULL),('marko.stankovic','marko123',9,NULL,NULL),('jelena.simic','jelena123',10,NULL,NULL),('tijana.lazendic','tijana123',11,'LightTheme','Srpski');
 /*!40000 ALTER TABLE `nalog` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -487,7 +488,7 @@ CREATE TABLE `račun` (
   KEY `fk_RAČUN_NALOG1_idx` (`NALOG_IdNaloga`),
   CONSTRAINT `fk_RAČUN_KASA1` FOREIGN KEY (`KASA_IdKasa`) REFERENCES `kasa` (`IdKasa`),
   CONSTRAINT `fk_RAČUN_NALOG1` FOREIGN KEY (`NALOG_IdNaloga`) REFERENCES `nalog` (`IdNaloga`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -496,7 +497,7 @@ CREATE TABLE `račun` (
 
 LOCK TABLES `račun` WRITE;
 /*!40000 ALTER TABLE `račun` DISABLE KEYS */;
-INSERT INTO `račun` VALUES (1,'2024-06-15 10:30:00','Gotovina',0.00,1,1),(2,'2024-06-15 11:45:00','Kartica',0.00,1,2),(3,'2024-06-16 09:00:00','Gotovina',0.00,2,3),(4,'2024-06-16 14:20:00','Kartica',0.00,3,4),(5,'2024-06-17 13:15:00','Gotovina',0.00,2,5),(6,'2024-06-18 12:00:00','Kartica',0.00,3,6),(7,'2024-06-19 16:30:00','Kartica',0.00,1,7),(8,'2024-06-20 10:00:00','Gotovina',0.00,2,8),(9,'2024-06-21 15:45:00','Kartica',0.00,3,9),(10,'2024-06-22 11:20:00','Gotovina',0.00,1,10),(11,'2025-04-11 16:57:31','System.Windows.Controls.ComboBoxItem: Cash',78.00,1,1),(12,'2025-04-11 17:02:58','Card',40.00,2,1),(13,'2025-04-11 17:31:54','Card',55.00,1,1);
+INSERT INTO `račun` VALUES (1,'2024-06-15 10:30:00','Gotovina',0.00,1,1),(2,'2024-06-15 11:45:00','Kartica',0.00,1,2),(3,'2024-06-16 09:00:00','Gotovina',0.00,2,3),(4,'2024-06-16 14:20:00','Kartica',0.00,3,4),(5,'2024-06-17 13:15:00','Gotovina',0.00,2,5),(6,'2024-06-18 12:00:00','Kartica',0.00,3,6),(7,'2024-06-19 16:30:00','Kartica',0.00,1,7),(8,'2024-06-20 10:00:00','Gotovina',0.00,2,8),(9,'2024-06-21 15:45:00','Kartica',0.00,3,9),(10,'2024-06-22 11:20:00','Gotovina',0.00,1,10),(11,'2025-04-11 16:57:31','System.Windows.Controls.ComboBoxItem: Cash',78.00,1,1),(12,'2025-04-11 17:02:58','Card',40.00,2,1),(13,'2025-04-11 17:31:54','Card',55.00,1,1),(14,'2025-04-15 11:25:47','Card',165.00,2,1),(15,'2025-04-16 11:05:22','Kartica',113.00,1,1),(16,'2025-04-16 11:10:56','Cash',285.00,1,1),(17,'2025-04-16 11:24:45','Keš',165.00,1,1),(18,'2025-04-16 11:28:45','Keš',55.00,1,1),(19,'2025-04-16 11:28:51','Keš',110.00,1,1),(20,'2025-04-16 11:30:20','Keš',55.00,1,1);
 /*!40000 ALTER TABLE `račun` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -552,7 +553,7 @@ CREATE TABLE `stavka_racun` (
 
 LOCK TABLES `stavka_racun` WRITE;
 /*!40000 ALTER TABLE `stavka_racun` DISABLE KEYS */;
-INSERT INTO `stavka_racun` VALUES (2,55.00,1,1),(1,55.00,1,13),(1,30.00,2,2),(3,40.00,3,3),(1,20.00,4,4),(2,60.00,5,5),(1,25.00,6,1),(2,25.00,6,6),(1,25.00,6,12),(3,38.00,7,7),(1,15.00,8,8),(1,15.00,8,12),(4,28.00,9,9),(1,28.00,9,11),(2,50.00,10,10),(1,50.00,10,11);
+INSERT INTO `stavka_racun` VALUES (2,55.00,1,1),(1,55.00,1,13),(3,55.00,1,14),(1,55.00,1,15),(3,55.00,1,16),(3,55.00,1,17),(1,55.00,1,18),(2,55.00,1,19),(1,55.00,1,20),(1,30.00,2,2),(1,30.00,2,15),(4,30.00,2,16),(3,40.00,3,3),(1,20.00,4,4),(2,60.00,5,5),(1,25.00,6,1),(2,25.00,6,6),(1,25.00,6,12),(3,38.00,7,7),(1,15.00,8,8),(1,15.00,8,12),(4,28.00,9,9),(1,28.00,9,11),(1,28.00,9,15),(2,50.00,10,10),(1,50.00,10,11);
 /*!40000 ALTER TABLE `stavka_racun` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -600,7 +601,7 @@ CREATE TABLE `zaposleni` (
   `DatumZaposlenja` date NOT NULL,
   PRIMARY KEY (`IdZaposlenog`),
   UNIQUE KEY `IdZaposlenog_UNIQUE` (`IdZaposlenog`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -609,7 +610,7 @@ CREATE TABLE `zaposleni` (
 
 LOCK TABLES `zaposleni` WRITE;
 /*!40000 ALTER TABLE `zaposleni` DISABLE KEYS */;
-INSERT INTO `zaposleni` VALUES (1,'Jovan','Jovanović','+381641234567','Knez Mihailova 5, Beograd','Prva smjena','Prodaja kozmetike',45000.00,'2023-02-15'),(2,'Milica','Petrović','+381611234567','Njegoševa 10, Novi Sad','Druga smjena','Nabavka robe',50000.00,'2022-09-20'),(3,'Stefan','Đorđević','+381641234567','Cara Dušana 15, Niš','Treća smjena','Računovodstvo',55000.00,'2023-01-10'),(4,'Ana','Marković','+381621234567','Kralja Petra 8, Subotica','Prva smjena','Prodaja parfema',48000.00,'2023-03-05'),(5,'Nikola','Nikolić','+381631234567','Trg Republike 3, Kragujevac','Druga smjena','Marketing',52000.00,'2022-12-12'),(6,'Jovana','Stojanović','+381641234567','Vuka Karadžića 12, Čačak','Prva smjena','Administracija',46000.00,'2023-04-18'),(7,'Filip','Ilić','+381611234567','Gospodar Jevremova 20, Zrenjanin','Treća smjena','IT podrška',58000.00,'2022-11-25'),(8,'Mila','Pavlović','+381621234567','Nikole Pašića 25, Novi Pazar','Prva smjena','Prodaja makeupa',49000.00,'2023-02-28'),(9,'Marko','Stanković','+381631234567','Svetog Save 7, Šabac','Druga smjena','Logistika',51000.00,'2022-10-08'),(10,'Jelena','Simić','+381641234567','Karađorđeva 30, Kraljevo','Treća smjena','Prodaja lijekovaa',56000.00,'2023-01-15'),(11,'Tijana','Lazendić','+38766321449','Gornji Graci bb Mrkonjić Grad','Prva smjena','Direktor',4000.00,'2025-03-11'),(20,'a','a','a','a','a','a',8000.00,'2025-07-15');
+INSERT INTO `zaposleni` VALUES (1,'Jovan','Jovanović','+381641234567','Knez Mihailova 5, Beograd','Prva smjena','Prodaja kozmetikeee',45000.00,'2023-02-15'),(2,'Milica','Petrović','+381611234567','Njegoševa 10, Novi Sad','Druga smjena','Nabavka robe',50000.00,'2022-09-20'),(3,'Stefan','Đorđević','+381641234567','Cara Dušana 15, Niš','Treća smjena','Računovodstvo',55000.00,'2023-01-10'),(4,'Ana','Marković','+381621234567','Kralja Petra 8, Subotica','Prva smjena','Prodaja parfema',48000.00,'2023-03-05'),(5,'Nikola','Nikolić','+381631234567','Trg Republike 3, Kragujevac','Druga smjena','Marketing',52000.00,'2022-12-12'),(6,'Jovana','Stojanović','+381641234567','Vuka Karadžića 12, Čačak','Prva smjena','Administracija',46000.00,'2023-04-18'),(7,'Filip','Ilić','+381611234567','Gospodar Jevremova 20, Zrenjanin','Treća smjena','IT podrška',58000.00,'2022-11-25'),(8,'Mila','Pavlović','+381621234567','Nikole Pašića 25, Novi Pazar','Prva smjena','Prodaja makeupa',49000.00,'2023-02-28'),(9,'Marko','Stanković','+381631234567','Svetog Save 7, Šabac','Druga smjena','Logistika',51000.00,'2022-10-08'),(10,'Jelena','Simić','+381641234567','Karađorđeva 30, Kraljevo','Treća smjena','Prodaja lijekovaa',56000.00,'2023-01-15'),(11,'Tijana','Lazendić','+38766321449','Gornji Graci bb Mrkonjić Grad','Prva smjena','Direktor',4000.00,'2025-03-11');
 /*!40000 ALTER TABLE `zaposleni` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -622,4 +623,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-12 10:47:51
+-- Dump completed on 2025-04-16 14:00:56
