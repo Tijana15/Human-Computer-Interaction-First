@@ -114,6 +114,8 @@
     <sys:String x:Key="DeleteEmployeeConfirmTitle">Confirm</sys:String>
     <sys:String x:Key="IncorrectLoginMessage">Incorrect username or password. Try again.</sys:String>
     <sys:String x:Key="LoginErrorTitle">Error</sys:String>
-
+    <sys:String x:Key="PurchasePriceText">Purchase price</sys:String>
+    <sys:String x:Key="PurchaseDateText">Purchase date</sys:String>
+    <sys:String x:Key="SupplierText">Supplier</sys:String>
 
 </ResourceDictionary>

@@ -22,18 +22,19 @@ namespace Projekat_A_DrogerijskaRadnja.Services
                 connection.Open();
 
                 string query = @"
-            SELECT 
+            SELECT
                 p.IdProizvod AS ProductId,
+                p.Naziv AS ProductName, -- Dodaj Naziv proizvoda
                 sr.RAČUN_IdRačun AS BillId,
                 sr.Količina AS Amount,
                 sr.CijenaProdajna AS SellingPrice
-            FROM 
+            FROM
                 stavka_racun sr
-            JOIN 
+            JOIN
                 prodajni_artikl pa ON sr.PRODAJNI_ARTIKL_PROIZVOD_IdProizvod = pa.PROIZVOD_IdProizvod
-            JOIN 
+            JOIN
                 proizvod p ON pa.PROIZVOD_IdProizvod = p.IdProizvod
-            WHERE 
+            WHERE
                 sr.RAČUN_IdRačun = @BillId";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -47,6 +48,7 @@ namespace Projekat_A_DrogerijskaRadnja.Services
                             BaseBillItem item = new BaseBillItem
                             {
                                 ProductId = reader.GetInt32("ProductId"),
+                                ProductName = reader.GetString("ProductName"), 
                                 BillId = reader.GetInt32("BillId"),
                                 Amount = reader.GetInt32("Amount"),
                                 SellingPrice = reader.GetDouble("SellingPrice")

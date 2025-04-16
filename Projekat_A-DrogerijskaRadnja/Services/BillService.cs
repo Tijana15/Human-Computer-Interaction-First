@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using Projekat_A_DrogerijskaRadnja.Model;
+using Projekat_A_DrogerijskaRadnja.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Windows;
 
@@ -10,10 +12,13 @@ namespace Projekat_A_DrogerijskaRadnja.Services
     public class BillService
     {
         private readonly string connectionString;
+        private readonly BillItemBaseService billItemService;
+
 
         public BillService()
         {
             connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            billItemService = new BillItemBaseService();
         }
 
         public List<Bill> GetAllBills()
@@ -42,43 +47,62 @@ namespace Projekat_A_DrogerijskaRadnja.Services
             return bills;
         }
 
-        public List<Bill> GetBillsByDate(string selectedDate)
+        public ObservableCollection<BillViewModel> GetBillsByDate(string date)
         {
-            var bills = new List<Bill>();
-            using (var connection = new MySqlConnection(connectionString))
+            ObservableCollection<BillViewModel> billViewModels = new ObservableCollection<BillViewModel>();
+            DateTime searchDate;
+
+            if (DateTime.TryParse(date, out searchDate))
             {
-                DateTime parsedDate;
-                if (DateTime.TryParseExact(selectedDate, "d.M.yyyy. HH:mm:ss",
-                                           System.Globalization.CultureInfo.InvariantCulture,
-                                           System.Globalization.DateTimeStyles.None, out parsedDate))
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    var query = "SELECT * FROM račun WHERE DATE(DatumVrijemeIzdavanja) = @Date";
-                    var command = new MySqlCommand(query, connection);
-
-                    command.Parameters.AddWithValue("@Date", parsedDate);
-
                     connection.Open();
-                    using (var reader = command.ExecuteReader())
+
+                    string query = @"
+                        SELECT
+                            IdRačun AS Id,
+                            DatumVrijemeIzdavanja AS DateTime,
+                            Iznos AS Price,
+                            NacinPlacanja AS PayingMethod,
+                            KASA_IdKasa AS CashRegisterId,
+                            NALOG_IdNaloga AS AccountId
+                        FROM
+                            račun
+                        WHERE
+                            DATE(DatumVrijemeIzdavanja) = @Date";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        command.Parameters.AddWithValue("@Date", searchDate.ToString("yyyy-MM-dd"));
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            bills.Add(new Bill(
-                                reader.GetInt32("IdRačun"),
-                                reader.GetDateTime("DatumVrijemeIzdavanja"),
-                                reader.GetString("NacinPlacanja"),
-                                reader.GetDouble("Iznos"),
-                                reader.GetInt32("KASA_IdKasa"),
-                                reader.GetInt32("NALOG_IdNaloga")
-                            ));
+                            while (reader.Read())
+                            {
+                                Bill bill = new Bill(
+                                    reader.GetInt32("Id"),
+                                    reader.GetDateTime("DateTime"),
+                                    reader.GetString("PayingMethod"),
+                                    reader.GetDouble("Price"),
+                                    reader.GetInt32("CashRegisterId"),
+                                    reader.GetInt32("AccountId")
+                                );
+
+                                var billItems = billItemService.GetAllById(bill.BillId);
+
+                                BillViewModel billViewModel = new BillViewModel(bill);
+                                foreach (var item in billItems)
+                                {
+                                    billViewModel.BillItems.Add(item);
+                                }
+                                billViewModels.Add(billViewModel);
+                            }
                         }
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Invalid date format.");
-                }
             }
-            return bills;
+
+            return billViewModels;
         }
 
         public int CreateBill(Bill bill)

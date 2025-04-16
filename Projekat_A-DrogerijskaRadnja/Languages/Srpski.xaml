@@ -116,6 +116,8 @@
     <sys:String x:Key="IncorrectLoginMessage">Pogrešno korisničko ime ili lozinka. Pokušajte ponovo.</sys:String>
     <sys:String x:Key="LoginErrorTitle">Greška</sys:String>
 
-
+    <sys:String x:Key="PurchasePriceText">Nabavna cijena</sys:String>
+    <sys:String x:Key="PurchaseDateText">Datum nabavke</sys:String>
+    <sys:String x:Key="SupplierText">Dobavljač</sys:String>
 
 </ResourceDictionary>

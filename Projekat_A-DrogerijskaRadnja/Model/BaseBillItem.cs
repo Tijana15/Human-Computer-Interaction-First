@@ -6,6 +6,7 @@
         public int BillId { get; set; }
         public int Amount { get; set; }
         public double SellingPrice { get; set; }
+        public string ProductName { get; set; }
         public BaseBillItem() { }
     }
 }

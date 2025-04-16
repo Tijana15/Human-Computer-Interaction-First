@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Projekat_A_DrogerijskaRadnja.Model
 {
@@ -10,7 +11,7 @@ namespace Projekat_A_DrogerijskaRadnja.Model
         public double Price { get; set; }
         public int CashRegisterId { get; set; }
         public int AccountId { get; set; }
-        public  Bill(int billId, DateTime dateTime, string payingMethod, double price, int cashRegisterId, int accountId)
+        public Bill(int billId, DateTime dateTime, string payingMethod, double price, int cashRegisterId, int accountId)
         {
             BillId = billId;
             DateTime = dateTime;
@@ -19,6 +20,7 @@ namespace Projekat_A_DrogerijskaRadnja.Model
             CashRegisterId = cashRegisterId;
             AccountId = accountId;
         }
+        public Bill() { }
         
     }
     

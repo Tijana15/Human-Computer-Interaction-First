@@ -6,12 +6,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Projekat_A_DrogerijskaRadnja.Views
 {
-    /// <summary>
-    /// Interaction logic for Billing.xaml
-    /// </summary>
+  
     public partial class Billing : UserControl, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -27,7 +26,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         private DateTime _currentDateTime;
         private double _totalAmount;
 
-        // Pomoćna klasa koja proširuje BaseBillItem za prikaz
         public class BillItemViewModel : BaseBillItem, INotifyPropertyChanged
         {
             public string _productName;
@@ -280,7 +278,39 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
                     itemService.AddBillItem(billItem);
                 }
-                MessageBox.Show(Application.Current.Resources["CreateBillSuccessMessage"].ToString());
+                var successWindow = new Window
+                {
+                    Title = Application.Current.Resources["SuccessTitle"].ToString(), 
+                    Width = 300,
+                    Height = 150,
+                    ResizeMode = ResizeMode.NoResize,
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    Owner = Window.GetWindow(this), 
+                    Content = new StackPanel
+                    {
+                        VerticalAlignment = VerticalAlignment.Center,
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        Children =
+            {
+                new TextBlock
+                {
+                    Text = "✔", 
+                    FontSize = 36,
+                    Foreground = Brushes.Green,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Margin = new Thickness(0, 0, 0, 10)
+                },
+                new TextBlock
+                {
+                    Text = Application.Current.Resources["CreateBillSuccessMessage"].ToString(), 
+                    FontSize = 16,
+                    TextWrapping = TextWrapping.Wrap,
+                    TextAlignment = TextAlignment.Center
+                }
+            }
+                    }
+                };
+                successWindow.Show();
                 BillItems.Clear();
                 TotalAmount = 0;
             }
@@ -289,8 +319,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
                 MessageBox.Show(Application.Current.Resources["CreateBillInfoMessage"].ToString(), "Informacija", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-
-
 
         public void OnPropertyChanged(string propertyName)
         {

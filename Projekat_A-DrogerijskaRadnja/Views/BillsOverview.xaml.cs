@@ -22,10 +22,10 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             if (datePicker.SelectedDate.HasValue)
             {
                 DateTime selectedDate = datePicker.SelectedDate.Value;
-                var bills = billService.GetBillsByDate(selectedDate.ToString());
+                var billViewModels = billService.GetBillsByDate(selectedDate.ToString());
 
-                billsList.ItemsSource = bills;
-                if (bills.Count == 0)
+                billsList.ItemsSource = billViewModels;
+                if (billViewModels.Count == 0)
                 {
                     MessageBox.Show(Application.Current.Resources["NoBillsForDateMessage"].ToString());
                 }

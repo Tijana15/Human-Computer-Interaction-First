@@ -27,14 +27,18 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             departments = departmentService.getDepartments();
             cmbDepartments.ItemsSource = departments;
             cmbDepartments.DisplayMemberPath = "Name";
-            cmbDepartments.SelectedValue = "Id_Department"; 
+            cmbDepartments.SelectedValuePath = "Id_Department";
 
-            var selectedDepartment = departments
-                .FirstOrDefault(d => d.Id_Department == category.DepartmentId);
+            var initialDepartment = departments
+                .FirstOrDefault(d => d.Id_Department == category.DepartmentId); 
 
-            if (selectedDepartment != null)
+            if (initialDepartment != null)
             {
-                cmbDepartments.SelectedItem = selectedDepartment;
+                cmbDepartments.SelectedItem = initialDepartment;
+            }
+            else
+            {
+                cmbDepartments.SelectedIndex = 0;
             }
         }
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
