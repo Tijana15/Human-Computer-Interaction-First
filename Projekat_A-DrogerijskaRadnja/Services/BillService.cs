@@ -14,7 +14,6 @@ namespace Projekat_A_DrogerijskaRadnja.Services
         private readonly string connectionString;
         private readonly BillItemBaseService billItemService;
 
-
         public BillService()
         {
             connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
@@ -131,7 +130,6 @@ namespace Projekat_A_DrogerijskaRadnja.Services
 
             return insertedId;
         }
-
 
     }
 }

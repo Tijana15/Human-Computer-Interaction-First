@@ -19,7 +19,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         private void OnUpdateClick(object sender, RoutedEventArgs e)
         {
-            
             employeeService.UpdateEmployee(Employee);
             this.Close();
         }

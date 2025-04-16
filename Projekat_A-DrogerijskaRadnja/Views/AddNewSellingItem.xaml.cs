@@ -10,7 +10,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         private List<Product> products = new List<Product>();
         public ProductService ProductService = new ProductService();
         private SellingItemService sellingItemService;
-
         private Product SelectedProduct => cmbProducts.SelectedItem as Product;
         public double Price => double.TryParse(txtPrice.Text, out double price) ? price : 0;
 
@@ -21,16 +20,12 @@ namespace Projekat_A_DrogerijskaRadnja.Views
             LoadProducts();
             
         }
-
-
         private void LoadProducts()
         {
             products = ProductService.GetAllProducts();
             cmbProducts.ItemsSource = products;
             cmbProducts.DisplayMemberPath = "Name";
         }
-
-        
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {

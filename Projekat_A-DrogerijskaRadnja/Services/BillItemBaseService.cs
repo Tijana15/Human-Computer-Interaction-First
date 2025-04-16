@@ -82,8 +82,5 @@ namespace Projekat_A_DrogerijskaRadnja.Services
                 }
             }
         }
-
-
-
     }
 }

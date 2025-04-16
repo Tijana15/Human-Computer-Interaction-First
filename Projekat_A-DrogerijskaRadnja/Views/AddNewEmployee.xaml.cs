@@ -70,7 +70,5 @@ namespace Projekat_A_DrogerijskaRadnja.Views
         {
             this.Close();
         }
-
-
     }
 }

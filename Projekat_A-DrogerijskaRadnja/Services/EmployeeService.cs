@@ -14,7 +14,6 @@ namespace Projekat_A_DrogerijskaRadnja.Services
             connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
         }
 
-        
         public List<Employee> GetEmployees()
         {
             var employees = new List<Employee>();

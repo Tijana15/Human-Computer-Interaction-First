@@ -57,8 +57,6 @@ namespace Projekat_A_DrogerijskaRadnja.Services
             return null;
         }
     
-
-
         public List<SellingItem> GetAllSellingItems()
         {
             var items = new List<sellingItem>();

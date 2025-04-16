@@ -39,7 +39,6 @@ namespace Projekat_A_DrogerijskaRadnja.Views
 
         }
 
-       
         private void OnSearchButton(object sender, RoutedEventArgs e)
         {
             string searchText = searchBox.Text.Trim();
