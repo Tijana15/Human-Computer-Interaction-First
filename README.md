@@ -47,15 +47,16 @@ Zaposleni imaju sljedeće opcije:
   - Pregled proizvoda po kategorijama.
   - Dodavanje novih kategorija, uređivanje postojećih i brisanje.
   
-- **Pregled i CRUD operacije nad prodajnim artiklima**:
+- **Pregled prodajnih artikala**:
   - Pregled svih dostupnih proizvoda.
   - Detaljan pregled proizvoda sa opisom, cijenom i količinom.
-  - Dodavanje novih artikala, uređivanje postojećih i brisanje.
   
 - **Pregled računa**:
   - Zaposleni mogu pretraživati račune po datumima.
+  - Za svaki račun prikazuju se sve stavke sa cijenama, količinom i nazivom.
   
 - **Izdavanje računa**:
+  - Dodavanje proizvoda u korpu.
   - Pregled korpe proizvoda sa odabranim količinama.
   - Generisanje računa na osnovu odabranih stavki.
   - Definisanje načina plaćanja (gotovina, kartica) i kase na kojoj se izdaje račun.
